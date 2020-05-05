@@ -8,12 +8,17 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Manrope:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/images/favicon/apple-touch-icon.png'; ?>">
+    <link rel=" icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-32x32.png'; ?>">
+    <link rel=" icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-16x16.png'; ?>">
+    <link rel=" manifest" href="<?php echo get_template_directory_uri() . '/images/favicon/site.webmanifest'; ?>">
+
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class('main'); ?>>
 
-    <header class="sticky-top" role="banner">
+    <header class=" sticky-top" role="banner">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
             <div class="container">
                 <a class="navbar-brand mx-auto" href=<?php bloginfo('url'); ?>>

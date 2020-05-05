@@ -1,5 +1,3 @@
-@use 'colors';
-
 @mixin transition($property) {
   -webkit-transition: $property;
   -o-transition: $property;

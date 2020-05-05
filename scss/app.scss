@@ -1,4 +1,4 @@
 @use 'colors';
-@use 'custom';
-@use 'header';
-@use 'front-page';
+@import "custom";
+@import "header";
+@import "front-page";

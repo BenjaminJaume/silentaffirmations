@@ -23,7 +23,7 @@ function load_stylesheet()
     wp_register_style('normalize', get_template_directory_uri() . '/css/vendor/normalize.min.css', '', '8.0.1', 'all');
     wp_enqueue_style('normalize');
 
-    wp_register_style('app', get_template_directory_uri() . '/css/app.css', '', false, 'all');
+    wp_register_style('app', get_template_directory_uri() . '/css/app.css', '', '1.0.0', 'all');
     wp_enqueue_style('app');
 }
 add_action('wp_enqueue_scripts', 'load_stylesheet');
