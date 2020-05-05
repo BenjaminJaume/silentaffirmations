@@ -5,14 +5,16 @@
   "main": "index.js",
   "dependencies": {
     "animate.css": "^3.7.2",
+    "aos": "^2.3.4",
     "bootstrap": "^4.4.1",
+    "hover.css": "^2.3.2",
     "scss": "^0.2.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "sass --watch scss:css",
-    "scss-comp": "sass --watch scss:css --style compressed"
+    "css": "sass --watch scss:css --style compressed",
+    "css-v": "sass --watch scss/vendor:css/vendor --style compressed"
   },
   "repository": {
     "type": "git",

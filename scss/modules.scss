@@ -1,9 +1,0 @@
-@use "colors";
-
-$theme-colors: (
-  "light": colors.$brand-color,
-  "primary": colors.$brand-color,
-);
-
-@import "../node_modules/animate.css/animate.css";
-@import "../node_modules/bootstrap/scss/bootstrap";
