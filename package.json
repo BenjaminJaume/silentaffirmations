@@ -8,6 +8,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^4.4.1",
     "hover.css": "^2.3.2",
+    "normalize.css": "^8.0.1",
     "scss": "^0.2.4"
   },
   "devDependencies": {},

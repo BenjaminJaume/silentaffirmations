@@ -1,8 +1,11 @@
 @use "../colors";
 
 $theme-colors: (
-  "light": colors.$brand-color,
-  "primary": colors.$brand-color,
+  "dark": colors.$brand-color,
+  "success": colors.$emerald,
+  "primary": colors.$peter-river,
+  "warning": colors.$sun-flower,
+  "danger": colors.$brand-color,
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

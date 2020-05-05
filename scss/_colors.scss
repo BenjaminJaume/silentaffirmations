@@ -1,2 +1,217 @@
-$light: #fff;
-$brand-color: #ccdd0f;
+// Source: https://flatuicom/palette/defo
+// Name: Flat UI Palette v1
+
+$turquoise: #1abc9c;
+$green-sea: #16a085;
+$sun-flower: #f1c40f;
+$orange: #f39c12;
+$emerald: #2ecc71;
+$nephritis: #27ae60;
+$carrot: #e67e22;
+$pumkin: #d35400;
+$peter-river: #3498db;
+$belize-hole: #2980b9;
+$alizarin: #e74c3c;
+$pomegranate: #c0392b;
+$amethyst: #9b59b6;
+$wisteria: #8e44ad;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+$wet-asphalt: #34495e;
+$midnight-blue: #2c3e50;
+$concrete: #95a5a6;
+$absestos: #7f8c8d;
+
+// Name: German Palette
+
+$fusion-red: #fc5c65;
+$orange-hibiscus: #fd9644;
+$flirtatious: #fed330;
+$reptile-green: #26de81;
+$maximum-blue-green: #2bcbba;
+$desire: #eb3b5a;
+$beniukon-bronze: #fa8231;
+$nyc-taxi: #f7b731;
+$algal-fuel: #20bf6b;
+$turquoise-topaz: #0fb9b1;
+$high-blue: #45aaf2;
+$c64-ntsc: #4b7bec;
+$lighter-purple: #a55eea;
+$twinkle-blue: #d1d8e0;
+$blue-grey: #778ca3;
+$boyzone: #2d98da;
+$royal-blue: #3867d6;
+$gloomy-purple: #8854d0;
+$innuendo: #a5b1c2;
+$blue-horizon: #4b6584;
+
+// Custom colors
+
+$brand-color: #1f263b;
+$white: #fff;
+
+// Other
+
+$opacity-link: 0.75;
+
+// Links color
+
+.link-turquoise {
+  color: $turquoise;
+
+  &:hover {
+    color: rgba($turquoise, $opacity-link);
+  }
+}
+
+.link-green-sea {
+  color: $green-sea;
+
+  &:hover {
+    color: rgba($green-sea, $opacity-link);
+  }
+}
+
+.link-sun-flower {
+  color: $sun-flower;
+
+  &:hover {
+    color: rgba($sun-flower, $opacity-link);
+  }
+}
+
+.link-orange {
+  color: $orange;
+
+  &:hover {
+    color: rgba($orange, $opacity-link);
+  }
+}
+
+.link-emerald {
+  color: $emerald;
+
+  &:hover {
+    color: rgba($emerald, $opacity-link);
+  }
+}
+
+.link-nephritis {
+  color: $nephritis;
+
+  &:hover {
+    color: rgba($nephritis, $opacity-link);
+  }
+}
+
+.link-carrot {
+  color: $carrot;
+
+  &:hover {
+    color: rgba($carrot, $opacity-link);
+  }
+}
+
+.link-pumkin {
+  color: $pumkin;
+
+  &:hover {
+    color: rgba($pumkin, $opacity-link);
+  }
+}
+
+.link-peter-river {
+  color: $peter-river;
+
+  &:hover {
+    color: rgba($peter-river, $opacity-link);
+  }
+}
+
+.link-belize-hole {
+  color: $belize-hole;
+
+  &:hover {
+    color: rgba($belize-hole, $opacity-link);
+  }
+}
+
+.link-alizarin {
+  color: $alizarin;
+
+  &:hover {
+    color: rgba($alizarin, $opacity-link);
+  }
+}
+
+.link-pomegranate {
+  color: $pomegranate;
+
+  &:hover {
+    color: rgba($pomegranate, $opacity-link);
+  }
+}
+
+.link-amethyst {
+  color: $amethyst;
+
+  &:hover {
+    color: rgba($amethyst, $opacity-link);
+  }
+}
+
+.link-wisteria {
+  color: $wisteria;
+
+  &:hover {
+    color: rgba($wisteria, $opacity-link);
+  }
+}
+
+.link-clouds {
+  color: $clouds;
+
+  &:hover {
+    color: rgba($clouds, $opacity-link);
+  }
+}
+
+.link-silver {
+  color: $silver;
+
+  &:hover {
+    color: rgba($silver, $opacity-link);
+  }
+}
+
+.link-wet-asphalt {
+  color: $wet-asphalt;
+
+  &:hover {
+    color: rgba($wet-asphalt, $opacity-link);
+  }
+}
+
+.link-midnight-blue {
+  color: $midnight-blue;
+
+  &:hover {
+    color: rgba($midnight-blue, $opacity-link);
+  }
+}
+
+.link-concrete {
+  color: $concrete;
+
+  &:hover {
+    color: rgba($concrete, $opacity-link);
+  }
+}
+
+.link-absestos {
+  color: $absestos;
+
+  &:hover {
+    color: rgba($absestos, $opacity-link);
+  }
+}

@@ -1,0 +1,43 @@
+@use 'colors';
+
+$navbar-height: 66px;
+
+.font-manrope {
+  font-family: "Manrope", sans-serif !important;
+}
+
+.font-jost {
+  font-family: "Jost", sans-serif !important;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.img-text-container {
+  position: relative;
+  text-align: center;
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.vh-100 {
+  height: calc(100% - #{$navbar-height}) !important;
+  height: calc(100vh - #{$navbar-height}) !important;
+}
+
+.bg-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-danger.hvr-underline-from-center:before,
+.btn-outline-danger.hvr-underline-from-center:before {
+  background: colors.$white;
+}
