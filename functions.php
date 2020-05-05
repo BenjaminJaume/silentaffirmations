@@ -2,8 +2,8 @@
 
 function load_stylesheet()
 {
-    wp_register_style('custom', get_template_directory_uri() . '/css/custom.css', '', false, 'all');
-    wp_enqueue_style('custom');
+    wp_register_style('app', get_template_directory_uri() . '/css/app.css', '', false, 'all');
+    wp_enqueue_style('app');
 
     wp_register_style('modules', get_template_directory_uri() . '/css/modules.css', '', false, 'all');
     wp_enqueue_style('modules');

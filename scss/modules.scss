@@ -1,2 +1,8 @@
-@use '../node_modules/bootstrap/scss/bootstrap.scss';
-@use '../node_modules/animate.css/animate.css'
+@use "colors";
+
+$theme-colors: (
+  "primary": colors.$brand-color,
+);
+
+@import "../node_modules/animate.css/animate.css";
+@import "../node_modules/bootstrap/scss/bootstrap";
