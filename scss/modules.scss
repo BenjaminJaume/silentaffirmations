@@ -1,6 +1,7 @@
 @use "colors";
 
 $theme-colors: (
+  "light": colors.$brand-color,
   "primary": colors.$brand-color,
 );
 
