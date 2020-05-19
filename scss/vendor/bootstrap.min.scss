@@ -2,10 +2,8 @@
 
 $theme-colors: (
   "dark": colors.$brand-color,
-  "success": colors.$emerald,
-  "primary": colors.$peter-river,
-  "warning": colors.$sun-flower,
-  "danger": colors.$brand-color,
+  "warning": colors.$orange,
+  "secondary": colors.$silver,
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

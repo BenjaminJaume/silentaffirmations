@@ -14,8 +14,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css": "sass --watch scss:css --style compressed",
-    "css-v": "sass --watch scss/vendor:css/vendor --style compressed"
+    "css": "sass --watch scss:css --style compressed"
   },
   "repository": {
     "type": "git",

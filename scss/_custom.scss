@@ -12,6 +12,17 @@ $navbar-height: 66px;
   font-family: "Roboto", sans-serif !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .img-text-container {
   position: relative;
   text-align: center;
@@ -35,7 +46,35 @@ $navbar-height: 66px;
   background-size: cover;
 }
 
-.btn-danger.hvr-underline-from-center:before,
-.btn-outline-danger.hvr-underline-from-center:before {
+.btn-dark.hvr-underline-from-center:before,
+.btn-outline-dark.hvr-underline-from-center:before {
   background: colors.$white;
+}
+
+.frame,
+.frame-hover {
+  padding: 1px;
+  border: solid 3px #efefef;
+}
+
+.frame-hover {
+  &:hover,
+  frame {
+    border: solid 3px #ccc;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
+  }
+}
+
+.font-big {
+  font-size: 1.25rem;
+}
+
+.font-bigger {
+  font-size: 1.5rem;
+}
+
+.bg-white-50 {
+  background-color: rgba(colors.$white, 0.5);
 }

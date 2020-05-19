@@ -20,7 +20,7 @@
 
     <header class=" sticky-top" role="banner">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand mx-auto" href=<?php bloginfo('url'); ?>>
                     <img src="<?php echo get_template_directory_uri() . '/images/logo.png' ?>" alt="" class="align-middle navbar-logo img-fluid" />
                 </a>
@@ -36,11 +36,17 @@
                     'container'         => 'div',
                     'container_class'   => 'collapse navbar-collapse',
                     'container_id'      => 'navbar',
-                    'menu_class'        => 'nav navbar-nav mx-auto text-center font-manrope font-weight-bold',
+                    'menu_class'        => 'nav navbar-nav mx-auto text-center font-manrope font-weight-bold text-uppercase',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker(),
                 ));
                 ?>
+
+                <div class="d-flex justify-content-center mx-auto my-2 my-lg-0">
+                    <a href="account?type=register" class="btn btn-warning rounded-pill text-uppercase text-nowrap px-3 mx-3">
+                        Log In
+                    </a>
+                </div>
             </div>
         </nav>
     </header>

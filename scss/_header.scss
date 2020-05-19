@@ -22,19 +22,19 @@ header {
       }
 
       a[title*="Get started"] {
-        border: 1px solid colors.$emerald;
+        border: 1px solid colors.$orange;
       }
 
       .nav-link {
         color: colors.$white;
 
         &:hover {
-          color: rgba(colors.$emerald, 0.75);
+          color: rgba(colors.$orange, 0.75);
         }
       }
 
       .active > .nav-link {
-        color: colors.$emerald;
+        color: colors.$orange;
       }
     }
 
