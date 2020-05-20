@@ -75,9 +75,17 @@ function console($data)
 add_action('init', 'init_remove_support', 100);
 function init_remove_support()
 {
-    remove_post_type_support('page', 'editor');
+    // remove_post_type_support('page', 'editor');
 }
 
 @ini_set('upload_max_size', '100M');
 @ini_set('post_max_size', '100M');
 @ini_set('max_execution_time', '300');
+
+// Adding WooCommerce to the custom theme
+function theme_add_woocommerce_support()
+{
+    add_theme_support('woocommerce');
+}
+
+add_action('after_setup_theme', 'theme_add_woocommerce_support');

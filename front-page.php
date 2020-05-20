@@ -173,110 +173,114 @@ $section_7 = get_field('section_7');
     </div>
 </div>
 
-<div class="container-fluid bg-dark py-5">
-    <div class="row">
-        <div class="col-12 text-center mb-3">
-            <h3 class="font-manrope text-white text-uppercase mb-5">
-                Most popular
-                <i class="far fa-thumbs-up"></i>
-            </h3>
+<div class="bg-dark">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center mb-3">
+                <h3 class="font-manrope text-white text-uppercase mb-5">
+                    Most popular
+                    <i class="far fa-thumbs-up"></i>
+                </h3>
+            </div>
         </div>
-    </div>
-    <div class="row justify-content-center align-content-center">
-        <div class="col-12 col-sm-6 col-lg-4 mb-5">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(41); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Sexuality
-                    </h1>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-5 ">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(34); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Free Will
-                    </h1>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-5">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(44); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Sport
-                    </h1>
-                </div>
-            </a>
+        <div class="row justify-content-center align-content-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(41); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Sexuality
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(34); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Free Will
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(44); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Sport
+                        </h1>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
 <hr class="w-75 my-5" />
 
-<div class="container-fluid bg-dark my-5 py-5">
-    <div class="row">
-        <div class="col-12 text-center mb-3">
-            <h3 class="font-manrope text-white text-uppercase mb-5">
-                Others
-            </h3>
+<div class="bg-dark">
+    <div class="container my-5 py-5">
+        <div class="row">
+            <div class="col-12 text-center mb-3">
+                <h3 class="font-manrope text-white text-uppercase mb-5">
+                    Others
+                </h3>
+            </div>
         </div>
-    </div>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-content-center">
-        <div class="col-12 col-sm-6 col-lg-4 mb-5">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(50); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Category
-                    </h1>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-5 ">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(51); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Category
-                    </h1>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-5">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(52); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Category
-                    </h1>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-5">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(42); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Category
-                    </h1>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-5 ">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(33); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Category
-                    </h1>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-5">
-            <a href="#" alt="">
-                <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(28); ?>">
-                    <h1 class="centered text-white font-manrope text-decoration-none hvr-grow m-0 p-0">
-                        Category
-                    </h1>
-                </div>
-            </a>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-content-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(50); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Category
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow ">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(51); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Category
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(52); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Category
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(42); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Category
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow ">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(33); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Category
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+                <a href="#" alt="">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(28); ?>">
+                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
+                            Category
+                        </h1>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -302,7 +306,7 @@ $section_7 = get_field('section_7');
                         <div class="d-block w-100 text-center">
                             <iframe class="" height="500" width="100%" src="https://www.youtube.com/embed/8942TQpgLZI" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="carousel-caption d-none d-md-block bg-white-50 text-dark rounded">
+                        <div class="carousel-caption d-none d-md-block bg-white-75 text-dark rounded">
                             <h5>Testimonial from Monicca</h5>
                             <p>
                                 "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -316,7 +320,7 @@ $section_7 = get_field('section_7');
                         <div class="d-block w-100 text-center">
                             <iframe class="" height="500" width="100%" src="https://www.youtube.com/embed/EnflLRtslUQ" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="carousel-caption d-none d-md-block bg-white-50 text-dark rounded">
+                        <div class="carousel-caption d-none d-md-block bg-white-75 text-dark rounded">
                             <h5>Testimonial from David</h5>
                             <p>
                                 "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -330,7 +334,7 @@ $section_7 = get_field('section_7');
                         <div class="d-block w-100 text-center">
                             <iframe class="" height="500" width="100%" src="https://www.youtube.com/embed/f4FmAPuaRCY" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="carousel-caption d-none d-md-block bg-white-50 text-dark rounded">
+                        <div class="carousel-caption d-none d-md-block bg-white-75 text-dark rounded">
                             <h5>Testimonial from Nathan & Patricia</h5>
                             <p>
                                 "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
