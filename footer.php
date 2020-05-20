@@ -30,7 +30,7 @@
             <div class="col-12 text-center">
                 <p class="font-manrope">
                     Web Designer: Benjamin Jaume -
-                    <a href="www.benjaminjau.me" alt="" class="text-success">
+                    <a href="http://www.benjaminjau.me" alt="" class="text-success">
                         www.benjaminjau.me
                     </a>
                 </p>
