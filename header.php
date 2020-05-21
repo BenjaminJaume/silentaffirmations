@@ -48,8 +48,13 @@ console(basename($template));
                 ?>
 
                 <div class="d-flex justify-content-center mx-auto my-2 my-lg-0">
-                    <a href="account?type=register" class="btn btn-warning rounded-pill text-uppercase text-nowrap px-3 mx-3">
-                        Log In
+                    <a href="my-account" class="btn btn-outline-warning rounded-0 text-uppercase text-nowrap hvr-glow px-3 mx-3">
+                        <?php
+                        if (is_user_logged_in()) { ?>
+                            My account
+                        <?php } else { ?>
+                            Log In
+                        <?php } ?>
                     </a>
                 </div>
             </div>

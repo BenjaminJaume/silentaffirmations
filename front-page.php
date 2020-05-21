@@ -27,11 +27,11 @@ $section_7 = get_field('section_7');
             <?php echo wp_get_attachment_image(46, [250, 250], false, 'class=img-fluid'); ?>
 
             <div class="my-5">
-                <a href="/get-started" alt="" class="btn btn-dark hvr-underline-from-center btn-lg rounded-0">
+                <a href="/get-started" alt="" class="btn btn-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
                     Get Started
                 </a>
 
-                <a href="#section-1" alt="" class="btn btn-outline-dark hvr-underline-from-center btn-lg rounded-0">
+                <a href="#section-1" alt="" class="btn btn-outline-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
                     More
                 </a>
             </div>

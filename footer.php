@@ -2,14 +2,24 @@
 
 <div class="bg-light border-top">
     <footer class="container mt-5 py-5">
+        <div class="row mb-2">
+            <div class="col-12 text-center">
+                <?php echo wp_get_attachment_image(27, '', false, 'class=img-fluid bg-dark rounded-lg py-3'); ?>
+                <!-- <h1 class="font-manrope text-uppercase m-0 p-0">
+                    Silent Affirmations
+                </h1> -->
+            </div>
+        </div>
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="font-manrope text-uppercase m-0 p-0">
-                    Silent Affirmations
-                </h1>
-                <p class="text-muted m-0 p-0">
-                    Reprogram your subconscious mind
+                <p class="h5 text-muted font-italic m-0 p-0">
+                    - Reprogram your subconscious mind -
                 </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
             </div>
         </div>
 
