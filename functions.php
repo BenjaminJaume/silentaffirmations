@@ -66,6 +66,147 @@ register_nav_menus(
     )
 );
 
+// Custom post type function
+function create_posttype()
+{
+    register_post_type(
+        'categories',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Categories'),
+                'singular_name' => __('Category')
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'categories'),
+            'show_in_rest' => true,
+            'menu_icon'           => wp_get_attachment_url(77),
+        )
+    );
+
+    register_post_type(
+        'affirmations',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Affirmation'),
+                'singular_name' => __('Affirmation')
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'affirmations'),
+            'show_in_rest' => true,
+            'menu_icon'           => wp_get_attachment_url(74),
+        )
+    );
+
+    register_post_type(
+        'musics',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Musics'),
+                'singular_name' => __('Music')
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'musics'),
+            'show_in_rest' => true,
+            'menu_icon'           => wp_get_attachment_url(76),
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action('init', 'create_posttype');
+
+// Add the custom columns to the categories post type:
+add_filter('manage_categories_posts_columns', 'set_custom_edit_categories_columns');
+function set_custom_edit_categories_columns($columns)
+{
+    $columns['title'];
+    unset($columns['date']);
+    $columns['description'] = __('Description');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the categories post type:
+add_action('manage_categories_posts_custom_column', 'custom_categories_column', 10, 2);
+function custom_categories_column($column, $post_id)
+{
+    switch ($column) {
+        case 'description':
+            the_excerpt($post_id);
+            break;
+    }
+}
+
+// Add the custom columns to the affirmations post type:
+add_filter('manage_affirmations_posts_columns', 'set_custom_edit_affirmations_columns');
+function set_custom_edit_affirmations_columns($columns)
+{
+    $columns['title'];
+    unset($columns['date']);
+    $columns['description'] = __('Description');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the affirmations post type:
+add_action('manage_affirmations_posts_custom_column', 'custom_affirmations_column', 10, 2);
+function custom_affirmations_column($column, $post_id)
+{
+    switch ($column) {
+        case 'description':
+            the_excerpt($post_id);
+            break;
+    }
+}
+
+// Add the custom columns to the musics post type:
+add_filter('manage_musics_posts_columns', 'set_custom_edit_musics_columns');
+function set_custom_edit_musics_columns($columns)
+{
+    unset($columns['date']);
+    $columns['title'];
+    $columns['description'] = __('Description');
+    $columns['file_title'] = __('File Title');
+    $columns['file_name'] = __('File Name');
+    $columns['file_size'] = __('File Size');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the musics post type:
+add_action('manage_musics_posts_custom_column', 'custom_musics_column', 10, 2);
+function custom_musics_column($column, $post_id)
+{
+    switch ($column) {
+        case 'description':
+            the_excerpt($post_id);
+            break;
+
+        case 'file_title':
+            $file = get_field('file', $post_id);
+            echo $file['title'];
+            break;
+
+        case 'file_name':
+            $file = get_field('file', $post_id);
+            echo $file['filename'];
+            break;
+
+        case 'file_size':
+            $file = get_field('file', $post_id);
+            echo formatBytes($file['filesize']);
+            break;
+    }
+}
+
 function console($data)
 {
     echo "<script>console.log('" . json_encode($data) . "');</script>";
@@ -89,3 +230,21 @@ function theme_add_woocommerce_support()
 }
 
 add_action('after_setup_theme', 'theme_add_woocommerce_support');
+
+function formatBytes($bytes, $precision = 0)
+{
+    $units = array('B', 'KB', 'MB', 'GB', 'TB');
+
+    $bytes = max($bytes, 0);
+    $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+    $pow = min($pow, count($units) - 1);
+
+    // Uncomment one of the following alternatives
+    $bytes /= pow(1024, $pow);
+    // $bytes /= (1 << (10 * $pow));
+
+    return round($bytes, $precision) . ' ' . $units[$pow];
+}
+
+// Flushing rules
+flush_rewrite_rules(false);

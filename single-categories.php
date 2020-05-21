@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <h1>
-    Archive page
+    Single Category
 </h1>
 
 <?php get_footer(); ?>

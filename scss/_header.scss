@@ -21,7 +21,7 @@ header {
         @include transition(all 300ms ease-in-out);
       }
 
-      a[title*="Get started"] {
+      a[title*="Get Started"] {
         border: 1px solid colors.$orange;
       }
 
