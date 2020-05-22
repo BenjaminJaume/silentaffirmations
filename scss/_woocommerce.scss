@@ -12,3 +12,10 @@
   border: 1px solid darken($color: #f0f0f0, $amount: 30%);
   background: #f0f0f0;
 }
+
+#wrapper-musics {
+  .woocommerce-tabs.wc-tabs-wrapper,
+  .related.products {
+    display: none;
+  }
+}

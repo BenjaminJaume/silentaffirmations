@@ -20,13 +20,13 @@ $q = get_posts($args);
 
 <div class="container my-5">
     <?php
-    if (isset($_POST['id_category'])) {
-        $id_category = $_POST['id_category'] ?>
+    if (isset($_POST['id_category_chosen'])) {
+        $id_category_chosen = $_POST['id_category_chosen'] ?>
         <div class="row">
             <div class="col-12 text-center">
                 <h1>
                     Categories:
-                    <?php echo get_the_title($id_category); ?>
+                    <?php echo get_the_title($id_category_chosen); ?>
                 </h1>
                 <a href="<?php echo get_site_url() . '/categories'; ?>" class="btn btn-outline-dark">
                     Go back to categories
@@ -53,8 +53,8 @@ $q = get_posts($args);
                             </button>
                         </p>
 
-                        <input type="hidden" name="id_category" value="<?php echo $id_category; ?>" />
-                        <input type="hidden" name="id_affirmation" value="<?php echo $id_affirmation; ?>" />
+                        <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
+                        <input type="hidden" name="id_affirmation_chosen" value="<?php echo $id_affirmation; ?>" />
                     </form>
                 <?php
                 } ?>

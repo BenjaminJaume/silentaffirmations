@@ -37,7 +37,7 @@ $q = get_posts($args);
                         </button>
                     </p>
 
-                    <input type="hidden" name="id_category" value="<?php echo $id_category; ?>" />
+                    <input type="hidden" name="id_category_chosen" value="<?php echo $id_category; ?>" />
                 </form>
             <?php
             } ?>

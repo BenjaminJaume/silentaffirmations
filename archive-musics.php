@@ -18,49 +18,78 @@ $q = get_posts($args);
 ?>
 
 
-<div class="container my-5">
+<div class="container my-5" id="wrapper-musics">
     <?php
-    if (isset($_POST['id_category']) && isset($_POST['id_affirmation'])) {
-        $id_category = $_POST['id_category'];
-        $id_affirmation = $_POST['id_affirmation'];
+    if (isset($_POST['id_category_chosen']) && isset($_POST['id_affirmation_chosen'])) {
+        $id_category_chosen = $_POST['id_category_chosen'];
+        $id_affirmation_chosen = $_POST['id_affirmation_chosen'];
 
-        $title_category = get_the_title($id_category);
-        $title_affirmation = get_the_title($id_affirmation);
+        $title_category = get_the_title($id_category_chosen);
+        $title_affirmation = get_the_title($id_affirmation_chosen);
 
-        console($title_category);
-        // console($title_affirmation);
-
+        // console($id_category_chosen . ' - ' . $id_affirmation_chosen);
     ?>
 
         <?php
 
+        /*
+        *  Query posts for a relationship value.
+        *  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+        */
+
         $products = get_posts(array(
             'post_type' => 'product',
-            'numberposts'    => -1,
-            'meta_query'    => array(
-                'relation'        => 'OR',
+            'meta_query' => array(
                 array(
-                    'key'        => 'category',
-                    'value'        => '"' . $title_category . '"',
-                    'compare'    => 'LIKE'
+                    'key' => 'category',
+                    'value' => '"' . $id_category_chosen . '"',
+                    'compare' => 'LIKE'
+                ),
+                array(
+                    'key' => 'affirmation',
+                    'value' => '"' . $id_affirmation_chosen . '"',
+                    'compare' => 'LIKE'
                 )
             )
         ));
 
         ?>
+        <div>
+            ID category: <?php echo $id_category_chosen; ?>
+            Category: <?php echo $title_category; ?>
+        </div>
+        <div>
+            ID affirmation: <?php echo $id_affirmation_chosen; ?>
+            Affirmation: <?php echo $title_affirmation; ?>
+        </div>
+
+        <hr />
         <?php if ($products) :
-            echo ('FOUNNNNDD');
+            foreach ($products as $product) :
+                $product_ID = $product->ID;
+                $p = wc_get_product($product_ID);
+
+                // print_r($p);
+
+                echo wp_get_attachment_image($p->get_image_id(), [350, 350], false, 'class=img-fluid frame');
         ?>
-            <ul>
-                <?php foreach ($products as $product) : ?>
-                    <li>
-                        <a href="<?php echo get_permalink($product->ID); ?>">
-                            <?php echo get_the_title($product->ID); ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else : echo ('Not found :('); ?>
+                <li>
+                    <a href="<?php echo get_permalink($product_ID); ?>">
+                        <?php echo get_the_title($product_ID); ?>
+                    </a>
+
+                    <?php
+
+                    // echo do_shortcode('[add_to_cart_url id="' . $product_ID . '"]');
+
+                    echo do_shortcode('[add_to_cart id="' . $product_ID . '" quantity="1" class="border-0"]');
+
+                    ?>
+
+                    <!-- <a href="<?php echo 'cart' . $add_to_cart; ?>" class="more">Buy now</a> -->
+                </li>
+            <?php endforeach;
+        else : echo 'Not Found' ?>
         <?php endif; ?>
 
         <?php wp_reset_query();     // Restore global post data stomped by the_post(). 

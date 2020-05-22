@@ -53,6 +53,9 @@ add_theme_support('post-thumbnails');
 // Add templates feature in Wordpress
 add_theme_support('templates');
 
+// Adding widgets
+// add_action('widgets_init', 'wpb_widgets_init');
+
 // Add Boostrap Menu file with Wordpress
 function register_navwalker()
 {
@@ -228,7 +231,6 @@ function theme_add_woocommerce_support()
 {
     add_theme_support('woocommerce');
 }
-
 add_action('after_setup_theme', 'theme_add_woocommerce_support');
 
 function formatBytes($bytes, $precision = 0)

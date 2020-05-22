@@ -18,7 +18,7 @@
 
 <?php
 global $template;
-console(basename($template));
+console($template);
 ?>
 
 <body <?php body_class('main'); ?>>
@@ -56,6 +56,13 @@ console(basename($template));
                             Log In
                         <?php } ?>
                     </a>
+
+                    <?php
+                    if (WC()->cart->get_cart_contents_count() > 0) { ?>
+                        <a href="<?php echo get_site_url() . '/cart'; ?>" class="btn btn-warning rounded-0">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </nav>
