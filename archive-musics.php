@@ -55,17 +55,17 @@ get_header();
                         <p class="text-muted mt-0">
                             Category
                         </p>
-                        <h3 class="text-uppercase font-manrope font-weight-light text-dark m-0">
+                        <h3 class="text-warning text-uppercase font-manrope font-weight-light m-0">
                             <?php echo $title_category; ?>
                         </h3>
                     </div>
                 </div>
                 <div class="col-12 col-md-7 col-lg-8 mx-auto border-left">
                     <div class="text-center py-4">
-                        <p class="text-muted mt-0">
+                        <p class="font-manrope text-warning mt-0">
                             Affirmation
                         </p>
-                        <p class="font-jost font-weight-light mb-0">
+                        <p class="font-jost font-weight-light font-big mb-0">
                             &quot;
                             <?php
                             $content = get_post_field('post_content', $id_affirmation_chosen);
@@ -180,6 +180,20 @@ get_header();
                     </div>
                 <?php } ?>
             </div>
+        <?php else : ?>
+            <hr class="w-75">
+
+            <div class="container-fluid my-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="font-big font-jost font-weight-light">
+                            Unfortunatly, there are no songs available for this category with this affirmation.<br />
+                            Please come back check it later.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         <?php endif; ?>
         <?php wp_reset_query();
         ?>

@@ -48,7 +48,7 @@ console($template);
                 ?>
 
                 <div class="d-flex justify-content-center mx-auto my-2 my-lg-0">
-                    <a href="my-account" class="btn btn-outline-warning rounded-0 text-uppercase text-nowrap hvr-glow px-3 mx-3">
+                    <a href="<?php echo get_site_url() . '/my-account'; ?>" class="btn btn-outline-warning rounded-0 text-uppercase text-nowrap hvr-glow px-3 mx-3">
                         <?php
                         if (is_user_logged_in()) { ?>
                             My account

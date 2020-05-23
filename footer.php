@@ -4,7 +4,7 @@
     <footer class="container mt-5 py-5">
         <div class="row mb-2">
             <div class="col-12 text-center">
-                <?php echo wp_get_attachment_image(27, '', false, 'class=img-fluid'); ?>
+                <?php echo wp_get_attachment_image(119, '', false, 'class=img-fluid'); ?>
                 <!-- <h1 class="font-manrope text-uppercase m-0 p-0">
                     Silent Affirmations
                 </h1> -->
