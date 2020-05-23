@@ -15,7 +15,12 @@
 
 #wrapper-musics {
   .woocommerce-tabs.wc-tabs-wrapper,
-  .related.products {
+  .related.products,
+  .woocommerce-Price-amount.amount {
     display: none;
+  }
+
+  .added_to_cart.wc-forward {
+    display: block;
   }
 }

@@ -31,9 +31,10 @@ if (wc_get_page_id('shop') > 0) : ?>
 			?>
 		</a>
 	</p> -->
-	<p class="return-to-shop">
-		<a class="btn btn-outline-dark" href="<?php echo get_home_url(); ?>">
-			<?php esc_html_e('Return to shop', 'woocommerce'); ?>
+	<p class="return-to-shop text-center">
+		<a class="btn btn-dark rounded-0 hvr-icon-back" href="<?php echo get_site_url() . '/categories'; ?>">
+			<i class="fa fa-chevron-left hvr-icon mr-2"></i>
+			Start choosing songs
 		</a>
 	</p>
 <?php endif; ?>
