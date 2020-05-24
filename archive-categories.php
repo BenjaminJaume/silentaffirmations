@@ -30,19 +30,49 @@ $q = get_posts($args);
     </div>
     <?php foreach ($q as $id_category) {
     ?>
-        <div class="row border my-2 py-5">
-            <div class="col-12 text-center">
-                <form action="<?php echo get_site_url() . '/affirmations'; ?>" method="post">
-                    <h1 class="text-warning font-jost font-weight-light mt-0 pt-0">
+        <?php
+
+        $image = get_field('image', $id_category);
+
+        if ($image) {
+            if ($image['ID']) {
+                $id_image = $image['ID'];
+            } else {
+                $id_image = $image;
+            } ?>
+
+            <div class="row">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+                    <div class="img-text-container category-container-shop bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url($id_image); ?>)">
+                        <div class="centered">
+                            <h1 class="centered text-dark bg-white-75 font-jost font-weight-light text-nowrap border border-dark p-2">
+                                <?php echo get_the_title($id_category); ?>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } else { ?>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h1 class="text-dark bg-white-75 font-jost font-weight-light p-0 m-0">
                         <?php echo get_the_title($id_category); ?>
                     </h1>
+                </div>
+            </div>
+        <?php } ?>
 
-                    <p class="font-jost">
-                        <?php echo get_the_excerpt($id_category); ?>
-                    </p>
+        <div class="row my-2 py-3">
+            <div class="col-12 text-center">
+                <p class="font-jost text-warning font-big font-weight-light">
+                    <?php echo get_the_excerpt($id_category); ?>
+                </p>
 
+                <form action="<?php echo get_site_url() . '/affirmations'; ?>" method="post">
                     <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center">
                         Choose
+                        &quot;<?php echo get_the_title($id_category); ?>&quot;
+
                         <i class="fa fa-chevron-right hvr-icon ml-2"></i>
                     </button>
 
@@ -50,6 +80,8 @@ $q = get_posts($args);
                 </form>
             </div>
         </div>
+
+        <hr class="w-75" />
     <?php
     } ?>
 </div>

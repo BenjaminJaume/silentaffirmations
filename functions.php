@@ -130,8 +130,10 @@ add_action('init', 'create_posttype');
 add_filter('manage_categories_posts_columns', 'set_custom_edit_categories_columns');
 function set_custom_edit_categories_columns($columns)
 {
-    $columns['title'];
+    unset($columns['title']);
     unset($columns['date']);
+    $columns['image'] = __('Image');
+    $columns['title'] = __('Title');
     $columns['description'] = __('Description');
 
     return $columns;
@@ -142,6 +144,26 @@ add_action('manage_categories_posts_custom_column', 'custom_categories_column', 
 function custom_categories_column($column, $post_id)
 {
     switch ($column) {
+        case 'title':
+            the_title($post_id);
+            break;
+
+        case 'image':
+            $image = get_field('image', $post_id);
+
+            if ($image) {
+                if ($image['ID']) {
+                    $id_image = $image['ID'];
+                } else {
+                    $id_image = $image;
+                }
+            } else {
+                echo 'No pictures linked';
+            }
+
+            echo wp_get_attachment_image($id_image, 'thumbnail', false, 'class=img-fluid');
+            break;
+
         case 'description':
             the_excerpt($post_id);
             break;
@@ -176,10 +198,10 @@ function set_custom_edit_musics_columns($columns)
 {
     unset($columns['date']);
     $columns['title'];
-    $columns['description'] = __('Description');
-    $columns['file_title'] = __('File Title');
+    $columns['category'] = __('Category');
+    $columns['affirmation'] = __('Affirmation');
     $columns['file_name'] = __('File Name');
-    $columns['file_size'] = __('File Size');
+    $columns['preview_name'] = __('Preview Name');
 
     return $columns;
 }
@@ -193,19 +215,28 @@ function custom_musics_column($column, $post_id)
             the_excerpt($post_id);
             break;
 
-        case 'file_title':
-            $file = get_field('file', $post_id);
-            echo $file['title'];
+        case 'category':
+            $category = get_field('category', $post_id);
+            echo get_the_title($category[0]->ID);
+            break;
+
+        case 'affirmation':
+            $affirmation = get_field('affirmation', $post_id);
+            echo get_the_title($affirmation[0]->ID);
             break;
 
         case 'file_name':
             $file = get_field('file', $post_id);
             echo $file['filename'];
+            echo '<br />';
+            echo formatBytes($file['filesize']);
             break;
 
-        case 'file_size':
-            $file = get_field('file', $post_id);
-            echo formatBytes($file['filesize']);
+        case 'preview_name':
+            $preview = get_field('preview', $post_id);
+            echo $preview['filename'];
+            echo '<br />';
+            echo formatBytes($preview['filesize']);
             break;
     }
 }

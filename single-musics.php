@@ -1,7 +1,6 @@
-<?php get_header(); ?>
+<?php
 
-<h1>
-    Single Music
-</h1>
+$header = "Location: " . get_site_url();
+header($header);
 
-<?php get_footer(); ?>
+exit();

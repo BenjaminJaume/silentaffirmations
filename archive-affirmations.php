@@ -53,17 +53,17 @@ if (isset($_POST['id_category_chosen'])) {
 
         <?php foreach ($q as $id_affirmation) {
         ?>
-            <div class="row border my-2 py-5">
+            <div class="row my-2 py-5">
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
-                    <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
-                        <p class="font-jost font-big font-weight-light">
-                            &quot;
-                            <?php echo get_the_excerpt($id_affirmation); ?>
-                            &quot;
-                        </p>
+                    <p class="font-jost font-big font-weight-light">
+                        &quot;
+                        <?php echo get_the_excerpt($id_affirmation); ?>
+                        &quot;
+                    </p>
 
+                    <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
                         <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
-                            Choose
+                            Choose this affirmation
                             <i class="fa fa-chevron-right hvr-icon ml-2"></i>
                         </button>
 
@@ -72,6 +72,9 @@ if (isset($_POST['id_category_chosen'])) {
                     </form>
                 </div>
             </div>
+
+            <hr class="w-75" />
+
         <?php
         } ?>
     </div>

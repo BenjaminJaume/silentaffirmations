@@ -15,7 +15,6 @@ $section_7 = get_field('section_7');
 <div class="container-fluid my-5">
     <div class="row h-100">
         <div class="col my-auto text-center">
-
             <h3 class="font-jost font-weight-light">
                 The power of
             </h3>
@@ -24,7 +23,7 @@ $section_7 = get_field('section_7');
                 Silent Affirmations
             </h1>
 
-            <?php echo wp_get_attachment_image(46, [250, 250], false, 'class=img-fluid'); ?>
+            <?php echo wp_get_attachment_image(46, [350, 350], false, 'class=img-fluid'); ?>
 
             <div class="my-5">
                 <a href="/get-started" alt="" class="btn btn-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
@@ -39,20 +38,33 @@ $section_7 = get_field('section_7');
     </div>
 </div>
 
+<div class="container-fluid m-0 p-0">
+    <div class="img-text-container video-container top-row-shop">
+        <video autoplay loop muted preload="auto" poster="<?php echo wp_get_attachment_url(40); ?>)">
+            <source src="<?php echo get_template_directory_uri() . '/medias/videos/neurons.mp4' ?>" type="video/mp4">
+        </video>
+        <span class="centered bg-white-75">
+            <h3 class="font-manrope text-uppercase text-dark font-weight-bold p-2 p-sm-4 m-0">
+                Reprogram your subconscious mind
+            </h3>
+        </span>
+        </span>
+    </div>
+</div>
+
+<!-- 
 <style>
     #section-1 {
         background-image: url(<?php echo wp_get_attachment_url(40); ?>);
     }
 </style>
-
 <div class="container-fluid img-text-container bg-section-1 bg-cover m-0 p-0" id="section-1">
     <div class="centered">
         <h1 class="text-center font-manrope text-uppercase text-warning font-weight-bold">
             Reprogram your subconscious mind
         </h1>
     </div>
-
-</div>
+</div> -->
 
 <div class="container my-5">
     <div class="row justify-content-center align-items-center">
@@ -183,28 +195,28 @@ $section_7 = get_field('section_7');
                 </h3>
             </div>
         </div>
-        <div class="row justify-content-center align-content-center">
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(41); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(41); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Sexuality
                         </h1>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(34); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(34); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Free Will
                         </h1>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(44); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(44); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Sport
                         </h1>
@@ -226,55 +238,55 @@ $section_7 = get_field('section_7');
                 </h3>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-content-center">
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-items-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(50); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(50); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Category
                         </h1>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow ">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob ">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(51); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(51); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Category
                         </h1>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(52); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(52); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Category
                         </h1>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(42); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(42); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Category
                         </h1>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow ">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob ">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(33); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(33); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Category
                         </h1>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-grow">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
                 <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(28); ?>">
+                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(28); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
                             Category
                         </h1>

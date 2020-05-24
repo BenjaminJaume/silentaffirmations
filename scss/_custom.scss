@@ -1,4 +1,4 @@
-$navbar-height: 66px;
+$navbar-height: 72px;
 
 .font-manrope {
   font-family: "Manrope", sans-serif !important;
@@ -81,4 +81,8 @@ body {
 
 .bg-white-75 {
   background-color: rgba(colors.$white, 0.75);
+}
+
+.category-container-shop {
+  height: 300px;
 }

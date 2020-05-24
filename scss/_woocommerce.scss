@@ -23,4 +23,14 @@
   .added_to_cart.wc-forward {
     display: block;
   }
+
+  .button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+    @extend .btn;
+    @extend .btn-dark;
+    @extend .rounded-0;
+
+    &.added {
+      @extend .btn-success;
+    }
+  }
 }

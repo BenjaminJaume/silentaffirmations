@@ -8,10 +8,10 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Manrope:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/images/favicon/apple-touch-icon.png'; ?>">
-    <link rel=" icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-32x32.png'; ?>">
-    <link rel=" icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-16x16.png'; ?>">
-    <link rel=" manifest" href="<?php echo get_template_directory_uri() . '/images/favicon/site.webmanifest'; ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/apple-touch-icon.png'; ?>">
+    <link rel=" icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/favicon-32x32.png'; ?>">
+    <link rel=" icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/favicon-16x16.png'; ?>">
+    <link rel=" manifest" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/site.webmanifest'; ?>">
 
     <?php wp_head(); ?>
 </head>
@@ -27,7 +27,9 @@ console($template);
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
             <div class="container-fluid">
                 <a class="navbar-brand mx-auto" href=<?php bloginfo('url'); ?>>
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo.png' ?>" alt="" class="align-middle navbar-logo img-fluid" />
+                    <!-- <img src="<?php echo get_template_directory_uri() . '/medias/images/logo.png' ?>" alt="" class="align-middle navbar-logo img-fluid" /> -->
+                    <?php echo wp_get_attachment_image(119, '', false, 'class=align-middle navbar-logo img-fluid'); ?>
+
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
