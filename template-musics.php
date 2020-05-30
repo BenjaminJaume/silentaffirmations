@@ -258,7 +258,6 @@ get_header();
                 </form>
             </div>
 </div>
-</div>
 
 <?php endif; ?>
 <?php wp_reset_query();
@@ -277,8 +276,7 @@ get_header();
                 </a>
             </div>
         </div>
-    <?php } ?>
     </div>
-    </div>
+<?php } ?>
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>

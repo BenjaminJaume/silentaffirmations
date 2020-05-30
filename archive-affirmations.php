@@ -7,13 +7,13 @@ Template Name: Affirmations
 get_header();
 
 // Get all the custom posts
-$args = [
-    'post_type'      => 'affirmations',
-    'posts_per_page' => -1,
-    'post_name_in'  => ['affirmations'],
-    'fields'         => 'ids'
-];
-$q = get_posts($args);
+// $args = [
+//     'post_type'      => 'affirmations',
+//     'posts_per_page' => -1,
+//     'post_name_in'  => ['affirmations'],
+//     'fields'         => 'ids'
+// ];
+// $q = get_posts($args);
 
 ?>
 
@@ -51,32 +51,79 @@ if (isset($_POST['id_category_chosen'])) {
             </div>
         </div>
 
-        <?php foreach ($q as $id_affirmation) {
-        ?>
-            <div class="row my-2 py-5">
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
-                    <p class="font-jost font-big font-weight-light">
-                        &quot;
-                        <?php echo get_the_excerpt($id_affirmation); ?>
-                        &quot;
-                    </p>
-
-                    <form action="<?php echo get_site_url() . '/musics-2'; ?>" method="post">
-                        <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
-                            Choose this affirmation
-                            <i class="fa fa-chevron-right hvr-icon ml-2"></i>
-                        </button>
-
-                        <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
-                        <input type="hidden" name="id_affirmation_chosen" value="<?php echo $id_affirmation; ?>" />
-                    </form>
-                </div>
-            </div>
-
-            <hr class="w-75" />
-
         <?php
-        } ?>
+
+        /*
+        *  Query posts for a relationship value.
+        *  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+        */
+
+        $affirmations = get_posts(array(
+            'post_type' => 'affirmations',
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                array(
+                    'key' => 'category',
+                    'value' => '"' . $id_category_chosen . '"',
+                    'compare' => 'LIKE'
+                )
+            )
+        ));
+
+        ?>
+
+        <?php if ($affirmations) : ?>
+            <div class="container-fluid my-5">
+                <?php foreach ($affirmations as $affirmation) :
+                    // $prod is a WordPress Post Object
+                    $affirmation_ID = $affirmation->ID;
+                ?>
+
+                    <div class="row my-2 py-5">
+                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
+
+                            <?php
+                            // If this is the custom affirmation
+                            if (!get_the_content('', '', $affirmation_ID) && (strpos(get_the_title($affirmation_ID), 'Custom') || strpos(get_the_title($affirmation_ID), 'custom'))) { ?>
+                                <p class="font-jost font-big font-weight-light">
+                                    &quot;
+                                    <?php echo get_the_excerpt($affirmation_ID); ?>
+                                    &quot;
+                                </p>
+
+                                <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
+                                    <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
+                                        Choose this affirmation
+                                        <i class="fa fa-chevron-right hvr-icon ml-2"></i>
+                                    </button>
+
+                                    <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
+                                    <input type="hidden" name="id_affirmation_chosen" value="<?php echo $affirmation_ID; ?>" />
+                                </form>
+                            <?php } else { ?>
+                                <p class="font-jost font-big font-weight-light">
+                                    &quot;
+                                    <?php echo get_the_excerpt($affirmation_ID); ?>
+                                    &quot;
+                                </p>
+
+                                <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
+                                    <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
+                                        Choose this affirmation
+                                        <i class="fa fa-chevron-right hvr-icon ml-2"></i>
+                                    </button>
+
+                                    <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
+                                    <input type="hidden" name="id_affirmation_chosen" value="<?php echo $affirmation_ID; ?>" />
+                                </form>
+                            <?php } ?>
+                        </div>
+                    </div>
+
+                    <hr class="w-75" />
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 <?php } else { ?>
     <div class="container my-5">

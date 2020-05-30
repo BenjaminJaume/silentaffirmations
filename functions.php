@@ -105,23 +105,6 @@ function create_posttype()
             'menu_icon'           => wp_get_attachment_url(74),
         )
     );
-
-    // register_post_type(
-    //     'musics',
-    //     // CPT Options
-    //     array(
-    //         'labels' => array(
-    //             'name' => __('Musics'),
-    //             'singular_name' => __('Music')
-    //         ),
-    //         'public' => true,
-    //         'publicly_queryable' => true,
-    //         'has_archive' => true,
-    //         'rewrite' => array('slug' => 'musics'),
-    //         'show_in_rest' => true,
-    //         'menu_icon'           => wp_get_attachment_url(76),
-    //     )
-    // );
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
@@ -198,55 +181,6 @@ function custom_affirmations_column($column, $post_id)
     }
 }
 
-// Add the custom columns to the musics post type:
-// add_filter('manage_musics_posts_columns', 'set_custom_edit_musics_columns');
-// function set_custom_edit_musics_columns($columns)
-// {
-//     unset($columns['date']);
-//     $columns['title'];
-//     $columns['category'] = __('Category');
-//     $columns['affirmation'] = __('Affirmation');
-//     $columns['file_name'] = __('File Name');
-//     $columns['preview_name'] = __('Preview Name');
-
-//     return $columns;
-// }
-
-// // Add the data to the custom columns for the musics post type:
-// add_action('manage_musics_posts_custom_column', 'custom_musics_column', 10, 2);
-// function custom_musics_column($column, $post_id)
-// {
-//     switch ($column) {
-//         case 'description':
-//             the_excerpt($post_id);
-//             break;
-
-//         case 'category':
-//             $category = get_field('category', $post_id);
-//             echo get_the_title($category[0]->ID);
-//             break;
-
-//         case 'affirmation':
-//             $affirmation = get_field('affirmation', $post_id);
-//             echo get_the_title($affirmation[0]->ID);
-//             break;
-
-//         case 'file_name':
-//             $file = get_field('file', $post_id);
-//             echo $file['filename'];
-//             echo '<br />';
-//             echo formatBytes($file['filesize']);
-//             break;
-
-//         case 'preview_name':
-//             $preview = get_field('preview', $post_id);
-//             echo $preview['filename'];
-//             echo '<br />';
-//             echo formatBytes($preview['filesize']);
-//             break;
-//     }
-// }
-
 function console($data)
 {
     echo "<script>console.log('" . json_encode($data) . "');</script>";
@@ -287,64 +221,3 @@ function formatBytes($bytes, $precision = 0)
 
 // Flushing rules
 flush_rewrite_rules(false);
-
-// Filter posts on Musics Admin Page
-if (is_admin()) {
-    //this hook will create a new filter on the admin area for the specified post type
-    add_action('restrict_manage_posts', function () {
-
-        $post_type = (isset($_GET['post_type'])) ? $_GET['post_type'] : 'post';
-
-        if ($post_type == 'musics') {
-            $values = array();
-
-            $args = array(
-                'posts_per_page'    => -1,
-                'post_type'         => 'musics',
-                'meta_key'          => 'category',
-            );
-            $q = get_posts($args);
-
-            foreach ($q as $data) {
-                $category_object = get_field('category', $data->ID);
-                $values[$category_object[0]->post_title] = $category_object[0]->post_title;
-            }
-
-?>
-            <select name="category">
-                <option value="">All categories</option>
-
-                <?php
-                $current_v = isset($_GET['category']) ? $_GET['category'] : '';
-                foreach ($values as $label => $value) {
-                    printf(
-                        '<option value="%s"%s>%s</option>',
-                        $value,
-                        $value == $current_v ? ' selected="selected"' : '',
-                        $label
-                    );
-                }
-                ?>
-            </select>
-<?php
-        }
-    });
-
-    //this hook will alter the main query according to the user's selection of the custom filter we created above:
-    add_filter('parse_query', function ($query) {
-        global $pagenow;
-        $post_type = (isset($_GET['post_type'])) ? $_GET['post_type'] : 'post';
-        $category = (isset($_GET['category'])) ? $_GET['category'] : '';
-
-        if ($post_type == 'musics' && $pagenow == 'edit.php' && isset($_GET['category']) && !empty($_GET['category'])) {
-            // only modify queries for 'musics' post type
-            if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'musics') {
-                // Set up the query here
-            }
-
-            return $query;
-
-            wp_reset_query();
-        }
-    });
-}
