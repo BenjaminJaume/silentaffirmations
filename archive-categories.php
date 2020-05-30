@@ -6,6 +6,9 @@ Template Name: Categories
 
 get_header();
 
+$_SESSION["id_category_chosen"];
+$_SESSION["id_affirmation_chosen"];
+
 // Get all the custom posts
 $args = [
     'post_type'      => 'categories',

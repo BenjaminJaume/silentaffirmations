@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Music
+Template Name: Musics
 */
 
 // Get all the custom posts
@@ -105,6 +105,7 @@ get_header();
 
         $products = get_posts(array(
             'post_type' => 'product',
+            'posts_per_page' => -1,
             'relation' => 'AND',
             'orderby' => 'music',
             'order' => 'ASC',
@@ -147,22 +148,30 @@ get_header();
                     $add_to_cart_url = $product->add_to_cart_url();
                     $product_name = $product->get_name();
                     $product_description = $product->get_short_description();
-                    $music = get_field('music', $product_ID);
-                    $music_ID = get_field('preview', $music[0]->ID);
-                    $music_name = $music[0]->post_title;
-                    $preview_url = $music_ID['url'];
+
+                    $files_list = $product->get_files();
+                    // Extracting the file name
+                    // Supposing that there is only one file per product
+                    foreach ($files_list as $key => $f) {
+                        $file_name = $f['name'];
+                    }
+
+                    $product_affirmation = get_field('affirmation', $product_ID);
+                    $music = get_field('preview', $product_ID);
+                    $preview_url = $music['url'];
 
                     // print_r($product);
                 ?>
                     <div class="row justify-content-center align-items-center my-3">
-                        <div class="col-12 col-xl-auto text-center">
+                        <!-- <div class="col-12 col-xl-auto text-center">
                             <?php
-                            echo wp_get_attachment_image($picture_ID, 'thumbnail', false, 'class=img-fluid rounded-circle');
+                            // echo wp_get_attachment_image($picture_ID, 'thumbnail', false, 'class=img-fluid rounded-circle');
                             ?>
-                        </div>
+
+                        </div> -->
                         <div class="col-12 col-md-6 col-lg-4 text-center">
                             <h3 class="font-manrope font-weight-light text-dark">
-                                <?php echo $music_name; ?>
+                                <?php echo $file_name; ?>
                             </h3>
 
                             <p>
@@ -229,8 +238,9 @@ get_header();
                             <label for="select_affirmation" class="text-warning text-uppercase">Affirmation</label>
                             <select name="id_affirmation_chosen" id="select_affirmation" class="form-control rounded-0">
                                 <?php foreach ($query_affirmations as $id) {
+                                    $c = get_field('category', $id);
                                     echo '<option value="' . $id . '">';
-                                    echo get_the_title($id);
+                                    echo $c[0]->post_title;
                                     echo ' - ';
                                     echo wp_trim_words(get_the_excerpt($id), 5);
                                     echo '</option>';

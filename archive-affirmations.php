@@ -61,7 +61,7 @@ if (isset($_POST['id_category_chosen'])) {
                         &quot;
                     </p>
 
-                    <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
+                    <form action="<?php echo get_site_url() . '/musics-2'; ?>" method="post">
                         <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
                             Choose this affirmation
                             <i class="fa fa-chevron-right hvr-icon ml-2"></i>
