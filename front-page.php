@@ -43,8 +43,8 @@ $section_7 = get_field('section_7');
         <video autoplay loop muted preload="auto" poster="<?php echo wp_get_attachment_url(40); ?>)">
             <source src="<?php echo get_template_directory_uri() . '/medias/videos/neurons.mp4' ?>" type="video/mp4">
         </video>
-        <span class="centered bg-white-75">
-            <h3 class="font-manrope text-uppercase text-dark font-weight-bold p-2 p-sm-4 m-0">
+        <span class="centered bg-dark-75">
+            <h3 class="font-manrope text-uppercase text-warning p-2 p-sm-4 m-0">
                 Reprogram your subconscious mind
             </h3>
         </span>
@@ -170,8 +170,42 @@ $section_7 = get_field('section_7');
     </p>
 </div>
 
-
 <hr class="w-75 my-5" />
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 col-md-4 text-center font-manrope">
+            <p>
+                <h1 class="font-weight-light">
+                    Step <span class="text-warning">1</span>
+                </h1>
+                <h3 class="font-weight-light">
+                    Choose a category
+                </h3>
+            </p>
+        </div>
+        <div class="col-12 col-md-4 text-center font-manrope">
+            <p>
+                <h1 class="font-weight-light">
+                    Step <span class="text-warning">2</span>
+                </h1>
+                <h3 class="font-weight-light">
+                    Choose an affirmation
+                </h3>
+            </p>
+        </div>
+        <div class="col-12 col-md-4 text-center font-manrope">
+            <p>
+                <h1 class="font-weight-light">
+                    Step <span class="text-warning">3</span>
+                </h1>
+                <h3 class="font-weight-light">
+                    Choose a music
+                </h3>
+            </p>
+        </div>
+    </div>
+</div>
 
 <div class="container mb-5">
     <div class="row">

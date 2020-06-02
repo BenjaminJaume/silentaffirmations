@@ -6,15 +6,6 @@ Template Name: Affirmations
 
 get_header();
 
-// Get all the custom posts
-// $args = [
-//     'post_type'      => 'affirmations',
-//     'posts_per_page' => -1,
-//     'post_name_in'  => ['affirmations'],
-//     'fields'         => 'ids'
-// ];
-// $q = get_posts($args);
-
 ?>
 
 
@@ -85,15 +76,18 @@ if (isset($_POST['id_category_chosen'])) {
                             <?php
                             // If this is the custom affirmation
                             if (!get_the_content('', '', $affirmation_ID) && (strpos(get_the_title($affirmation_ID), 'Custom') || strpos(get_the_title($affirmation_ID), 'custom'))) { ?>
-                                <p class="font-jost font-big font-weight-light">
-                                    &quot;
-                                    <?php echo get_the_excerpt($affirmation_ID); ?>
-                                    &quot;
-                                </p>
 
                                 <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
+                                    <div class="form-group">
+                                        <label class="h4 font-jost font-weight-light text-warning mb-3" for="custom_affirmation">Type your custom affirmation here</label>
+                                        <textarea class="form-control" name="custom_affirmation" id="custom_affirmation" placeholder="Example: I am the designer of my life. My inner world and the outside world are in balance. I am able to take life easy..." rows="4"><?php
+                                                                                                                                                                                                                                                                            if (isset($_POST['custom_affirmation'])) {
+                                                                                                                                                                                                                                                                                echo $_POST['custom_affirmation'];
+                                                                                                                                                                                                                                                                            } ?></textarea>
+                                    </div>
+
                                     <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
-                                        Choose this affirmation
+                                        Choose your affirmation
                                         <i class="fa fa-chevron-right hvr-icon ml-2"></i>
                                     </button>
 
@@ -122,6 +116,14 @@ if (isset($_POST['id_category_chosen'])) {
 
                     <hr class="w-75" />
                 <?php endforeach; ?>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 text-center">
+                    <a href=" <?php echo get_site_url() . '/categories'; ?>" class="btn btn-outline-dark rounded-0 hvr-icon-back">
+                        <i class="fa fa-chevron-left hvr-icon mr-1"></i>
+                        Go back to categories
+                    </a>
+                </div>
             </div>
         <?php endif; ?>
     </div>

@@ -3,14 +3,81 @@
     width: 100%;
     display: block;
   }
-}
 
-.woocommerce form .form-row input.input-text,
-.woocommerce form .form-row textarea {
-  padding: 0.25rem;
-  height: 30px;
-  border: 1px solid darken($color: #f0f0f0, $amount: 30%);
-  background: #f0f0f0;
+  .col-1,
+  .col-2 {
+    max-width: none;
+  }
+
+  form .form-row {
+    @extend .form-group;
+
+    label {
+      @extend .font-jost;
+    }
+  }
+
+  form {
+    input,
+    select,
+    textarea {
+      @extend .form-control;
+    }
+
+    input[type="checkbox"] {
+      @extend .form-check-input;
+    }
+  }
+
+  #order_review_heading {
+    @extend .mt-5;
+  }
+
+  .woocommerce-billing-fields h3,
+  .woocommerce-additional-fields h3,
+  #order_review_heading,
+  .woocommerce-order-details__title,
+  .woocommerce-column__title,
+  .u-column1.col-1 h2,
+  .u-column2.col-2 h2 {
+    @extend .font-manrope;
+    @extend .text-warning;
+    @extend .text-uppercase;
+  }
+
+  .shop_table.woocommerce-checkout-review-order-table {
+    @extend .font-manrope;
+  }
+
+  #respond input#submit.alt,
+  a.button.alt,
+  button.button.alt,
+  input.button.alt {
+    @extend .btn;
+    @extend .btn-dark;
+    @extend .rounded-0;
+
+    background-color: colors.$brand-color !important;
+
+    &:hover {
+      background-color: lighten(colors.$brand-color, 10%) !important;
+    }
+  }
+
+  button[name="update_cart"] {
+    @extend .btn;
+    @extend .btn-warning;
+    @extend .rounded-0;
+  }
+
+  .woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received {
+    @extend .h3;
+    @extend .font-manrope;
+    @extend .text-warning;
+    @extend .text-uppercase;
+    @extend .text-center;
+    @extend .mb-5;
+  }
 }
 
 #wrapper-musics {
@@ -22,6 +89,7 @@
 
   .added_to_cart.wc-forward {
     display: block;
+    @extend .text-success;
   }
 
   .button.product_type_simple.add_to_cart_button.ajax_add_to_cart {

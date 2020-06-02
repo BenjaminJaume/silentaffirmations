@@ -25,6 +25,14 @@ session_start();
 <?php
 global $template;
 console($template);
+
+if (is_shop()) {
+    $header = "Location: " . get_site_url();
+    header($header);
+
+    exit();
+}
+
 ?>
 
 <body <?php body_class('main'); ?>>
