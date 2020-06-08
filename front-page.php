@@ -407,7 +407,7 @@ $section_7 = get_field('section_7');
                     </div>
                     <div class="carousel-item" data-interval="20000">
                         <div class="d-block w-100 text-center">
-                            <iframe class="" height="500" width="100%" src="https://www.youtube.com/embed/EnflLRtslUQ" frameborder="0" allowfullscreen></iframe>
+                            <iframe class="" height="500" width="100%" src="https://www.youtube.com/embed/8942TQpgLZI" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-white-75 text-dark rounded">
                             <h5>Testimonial from David</h5>
@@ -421,7 +421,7 @@ $section_7 = get_field('section_7');
                     </div>
                     <div class="carousel-item" data-interval="20000">
                         <div class="d-block w-100 text-center">
-                            <iframe class="" height="500" width="100%" src="https://www.youtube.com/embed/f4FmAPuaRCY" frameborder="0" allowfullscreen></iframe>
+                            <iframe class="" height="500" width="100%" src="https://www.youtube.com/embed/8942TQpgLZI" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-white-75 text-dark rounded">
                             <h5>Testimonial from Nathan & Patricia</h5>
