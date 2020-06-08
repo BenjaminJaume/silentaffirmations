@@ -39,7 +39,7 @@ $section_7 = get_field('section_7');
 </div>
 
 <div class="container-fluid m-0 p-0">
-    <div class="img-text-container video-container top-row-shop">
+    <div class="img-text-container video-container video-banner-front-page">
         <video autoplay loop muted preload="auto" poster="<?php echo wp_get_attachment_url(40); ?>)">
             <source src="<?php echo get_template_directory_uri() . '/medias/videos/neurons.mp4' ?>" type="video/mp4">
         </video>
@@ -172,47 +172,50 @@ $section_7 = get_field('section_7');
 
 <hr class="w-75 my-5" />
 
-<div class="container my-5">
-    <div class="row">
+<div class="container-fluid my-5">
+    <div class="row py-5 my-5">
         <div class="col-12 col-md-4 text-center font-manrope">
-            <p>
-                <h1 class="font-weight-light">
-                    Step <span class="text-warning">1</span>
-                </h1>
-                <h3 class="font-weight-light">
-                    Choose a category
-                </h3>
-            </p>
+            <h1 class="font-weight-light text-uppercase">
+                Step <span class="text-warning">1</span>
+            </h1>
+            <h2 class="font-weight-light font-jost">
+                Choose a category
+            </h2>
         </div>
         <div class="col-12 col-md-4 text-center font-manrope">
-            <p>
-                <h1 class="font-weight-light">
-                    Step <span class="text-warning">2</span>
-                </h1>
-                <h3 class="font-weight-light">
-                    Choose an affirmation
-                </h3>
-            </p>
+            <h1 class="font-weight-light text-uppercase">
+                Step <span class="text-warning">2</span>
+            </h1>
+            <h2 class="font-weight-light font-jost">
+                Choose an affirmation
+            </h2>
         </div>
         <div class="col-12 col-md-4 text-center font-manrope">
-            <p>
-                <h1 class="font-weight-light">
-                    Step <span class="text-warning">3</span>
-                </h1>
-                <h3 class="font-weight-light">
-                    Choose a music
-                </h3>
-            </p>
+            <h1 class="font-weight-light text-uppercase">
+                Step <span class="text-warning">3</span>
+            </h1>
+            <h2 class="font-weight-light font-jost">
+                Choose a music
+            </h2>
         </div>
     </div>
 </div>
 
+<hr class="w-75 my-5" />
+
 <div class="container mb-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="font-jost text-dark text-uppercase">
+            <h4 class="font-manrope text-uppercase font-weight-light">
+                Pick a category: <span class="text-warning">option 1</span>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="font-jost text-dark font-weight-light text-uppercase animated infinite slower pulse">
                 <i class="far fa-arrow-alt-circle-down"></i>
-                Choose from these categories
+                These are our categories
                 <i class="far fa-arrow-alt-circle-down"></i>
             </h1>
         </div>
@@ -220,17 +223,13 @@ $section_7 = get_field('section_7');
 </div>
 
 <div class="bg-dark">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-12 text-center mb-3">
-                <h3 class="font-manrope text-white text-uppercase mb-5">
-                    Most popular
-                    <i class="far fa-thumbs-up"></i>
-                </h3>
-            </div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
+    <div class="container pt-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-items-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Sexuality"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(41); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -239,7 +238,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Free Will"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(34); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -248,7 +251,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Sport"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(44); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -257,23 +264,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-        </div>
-    </div>
-</div>
-
-<hr class="w-75 my-5" />
-
-<div class="bg-dark">
-    <div class="container my-5 py-5">
-        <div class="row">
-            <div class="col-12 text-center mb-3">
-                <h3 class="font-manrope text-white text-uppercase mb-5">
-                    Others
-                </h3>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-items-center">
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Category"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(50); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -282,7 +277,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob ">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center ">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Category"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(51); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -291,7 +290,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Category"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(52); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -300,7 +303,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Category"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(42); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -309,7 +316,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob ">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center ">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Category"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(33); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -318,7 +329,11 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 hvr-bob">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
+                    Choose "Category"
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
                 <a href="#" alt="">
                     <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(28); ?>)">
                         <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
@@ -330,6 +345,34 @@ $section_7 = get_field('section_7');
         </div>
     </div>
 </div>
+
+<div class="container my-5">
+    <div class="row mb-3">
+        <div class="col-12 text-center">
+            <h1 class="font-weight-light">
+                - OR -
+            </h1>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 text-center">
+            <h4 class="font-manrope text-uppercase font-weight-light">
+                Pick a category: <span class="text-warning">option 2</span>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="img-text-container category-container bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url(31); ?>)">
+                <a href="#" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
+                    Choose your own affirmation
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="w-75 my-5" />
 
 <div class="container my-5">
     <div class="row mb-5">

@@ -94,7 +94,7 @@ function create_posttype()
         // CPT Options
         array(
             'labels' => array(
-                'name' => __('Affirmation'),
+                'name' => __('Affirmations'),
                 'singular_name' => __('Affirmation')
             ),
             'public' => true,

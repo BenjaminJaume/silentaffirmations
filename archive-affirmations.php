@@ -52,6 +52,7 @@ if (isset($_POST['id_category_chosen'])) {
         $affirmations = get_posts(array(
             'post_type' => 'affirmations',
             'posts_per_page' => -1,
+            'order' => 'ASC',
             'meta_query' => array(
                 array(
                     'key' => 'category',
@@ -69,54 +70,41 @@ if (isset($_POST['id_category_chosen'])) {
                     // $prod is a WordPress Post Object
                     $affirmation_ID = $affirmation->ID;
                 ?>
+                    <hr class="w-75" />
 
                     <div class="row my-2 py-5">
-                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
+                        <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
+                            <p class="h2 font-jost font-weight-light">
+                                &quot;
+                                <?php echo get_the_excerpt($affirmation_ID); ?>
+                                &quot;
+                            </p>
 
-                            <?php
-                            // If this is the custom affirmation
-                            if (!get_the_content('', '', $affirmation_ID) && (strpos(get_the_title($affirmation_ID), 'Custom') || strpos(get_the_title($affirmation_ID), 'custom'))) { ?>
-
-                                <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
-                                    <div class="form-group">
-                                        <label class="h4 font-jost font-weight-light text-warning mb-3" for="custom_affirmation">Type your custom affirmation here</label>
-                                        <textarea class="form-control" name="custom_affirmation" id="custom_affirmation" placeholder="Example: I am the designer of my life. My inner world and the outside world are in balance. I am able to take life easy..." rows="4"><?php
-                                                                                                                                                                                                                                                                            if (isset($_POST['custom_affirmation'])) {
-                                                                                                                                                                                                                                                                                echo $_POST['custom_affirmation'];
-                                                                                                                                                                                                                                                                            } ?></textarea>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
-                                        Choose your affirmation
-                                        <i class="fa fa-chevron-right hvr-icon ml-2"></i>
-                                    </button>
-
-                                    <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
-                                    <input type="hidden" name="id_affirmation_chosen" value="<?php echo $affirmation_ID; ?>" />
-                                </form>
-                            <?php } else { ?>
-                                <p class="font-jost font-big font-weight-light">
-                                    &quot;
-                                    <?php echo get_the_excerpt($affirmation_ID); ?>
-                                    &quot;
-                                </p>
-
-                                <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
-                                    <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
-                                        Choose this affirmation
-                                        <i class="fa fa-chevron-right hvr-icon ml-2"></i>
-                                    </button>
-
-                                    <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
-                                    <input type="hidden" name="id_affirmation_chosen" value="<?php echo $affirmation_ID; ?>" />
-                                </form>
+                            <?php $reader = get_field('reader', $affirmation_ID);
+                            if ($reader['url']) { ?>
+                                <div class="my-4">
+                                    <hr class="w-50" />
+                                    <p class="text-warning text-uppercase">Listen to the affirmation</p>
+                                    <?php echo do_shortcode('[audio src="' . $reader['url'] . '"]'); ?>
+                                </div>
                             <?php } ?>
+
+                            <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
+                                <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">
+                                    Choose this affirmation
+                                    <i class="fa fa-chevron-right hvr-icon ml-2"></i>
+                                </button>
+
+                                <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
+                                <input type="hidden" name="id_affirmation_chosen" value="<?php echo $affirmation_ID; ?>" />
+                            </form>
                         </div>
                     </div>
-
-                    <hr class="w-75" />
                 <?php endforeach; ?>
             </div>
+
+            <hr class="w-75 my-5" />
+
             <div class="row my-3">
                 <div class="col-12 text-center">
                     <a href=" <?php echo get_site_url() . '/categories'; ?>" class="btn btn-outline-dark rounded-0 hvr-icon-back">
