@@ -14,14 +14,17 @@ function load_stylesheet()
     wp_register_style('fontawesome', get_template_directory_uri() . '/css/vendor/fontawesome/css/all.min.css', '', '5.12.1', 'all');
     wp_enqueue_style('fontawesome');
 
-    wp_register_style('select-select2', get_template_directory_uri() . '/css/vendor/select2.min.css', '', '4.0.13', 'all');
-    wp_enqueue_style('select-select2');
-
     wp_register_style('bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap.min.css', '', '4.4.1', 'all');
     wp_enqueue_style('bootstrap');
 
     wp_register_style('bootstrap-rfs', get_template_directory_uri() . '/css/vendor/bootstrap-rfs.css', '', false, 'all');
     wp_enqueue_style('bootstrap-rfs');
+
+    wp_register_style('select2-main', get_template_directory_uri() . '/css/vendor/select2.min.css', '', '4.0.13', 'all');
+    wp_enqueue_style('select2-main');
+
+    wp_register_style('select2-bootstrap', get_template_directory_uri() . '/css/vendor/select2-bootstrap4.min.css', '', '4.0.13', 'all');
+    wp_enqueue_style('select2-bootstrap');
 
     wp_register_style('normalize', get_template_directory_uri() . '/css/vendor/normalize.min.css', '', '8.0.1', 'all');
     wp_enqueue_style('normalize');
@@ -42,8 +45,9 @@ add_action('wp_enqueue_scripts', 'load_jquery');
 function load_javascript()
 {
     wp_enqueue_script('aos', get_template_directory_uri() . '/js/vendor/aos.js', 'jquery', false, true);
-    wp_enqueue_script('select2', get_template_directory_uri() . '/js/vendor/select2.min.js', 'jquery', '4.0.13', true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', 'jquery', '4.4.1', true);
+    wp_enqueue_script('select2-main', get_template_directory_uri() . '/js/vendor/select2.min.js', 'jquery', '4.0.13', true);
+    wp_enqueue_script('select2-bootstrap', get_template_directory_uri() . '/js/vendor/select2.full.min.js', 'jquery', '4.0.13', true);
     wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', 'jquery', false, true);
 }
 add_action('wp_enqueue_scripts', 'load_javascript');
@@ -245,3 +249,17 @@ function custom_override_checkout_fields($fields)
     return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
+
+// advanced search functionality
+function advanced_search_query($query)
+{
+    if ($query->is_search()) {
+        // tag search
+        if (isset($_GET['taglist']) && is_array($_GET['taglist'])) {
+            $query->set('tag_slug__and', $_GET['taglist']);
+        }
+
+        return $query;
+    }
+}
+add_action('pre_get_posts', 'advanced_search_query', 1000);

@@ -214,32 +214,50 @@ $section_7 = get_field('section_7');
 <div class="container mb-5">
     <div class="row my-5">
         <div class="col-12 text-center">
-            <h4 class="font-manrope text-uppercase font-weight-light">
-                Find the affirmation that fits you best
-            </h4>
+            <h2 class="text-muted font-weight-light m-0">
+                Let's start:
+            </h2>
+            <h1 class="font-manrope text-uppercase font-weight-light">
+                Find the <span class="text-warning">affirmation</span> that fits <span class="text-warning">you</span> best
+            </h1>
         </div>
-        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center my-4">
+        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center mt-5">
             <?php $tags = get_tags('post_tag'); ?>
-            <select class="select2-selector form-control">
-                <option value="" disabled selected>Select a keyword</option>
-                <?php foreach ($tags as $tag) : ?>
-                    <option value=" AL">
-                        <?php echo esc_attr($tag->name); ?>
-                    </option>
-                <?php endforeach; ?>
-                </ul>
-            </select>
-            <a href="#" alt="" class="btn btn-dark btn-lg rounded-0 hvr-underline-from-center mt-5">
-                Search an related affirmation
-            </a>
+
+            <form role="search" method="get" action="<?php bloginfo('url'); ?>">
+                <input type="hidden" name="s" value="" />
+
+                <div class="form-group">
+                    <label for="select2-tag">Select a keyword</label>
+                    <select class="custom-select custom-select-lg" type="search" name="tag" id="select2-tag" required="required" data-placeholder="Example: depression, self-love, mindfulness" data-allow-clear="1">
+                        <option></option>
+                        <?php foreach ($tags as $tag) : ?>
+                            <option value="<?php echo esc_attr($tag->slug); ?>">
+                                <?php echo esc_attr($tag->name); ?>
+                            </option>
+                        <?php endforeach; ?>
+                        </ul>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-dark rounded-0 hvr-underline-from-center">
+                    Search a related affirmation
+                    <i class="fas fa-search hvr-icon ml-1"></i>
+                </button>
+            </form>
         </div>
     </div>
-
-
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h1 class="font-weight-light">
+                - OR -
+            </h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12 text-center">
             <h4 class="font-manrope text-uppercase font-weight-light">
-                Pick a category: <span class="text-warning">option 1</span>
+                <span class="text-warning">Option 1</span>: pick a category
             </h4>
         </div>
     </div>
@@ -389,7 +407,7 @@ $section_7 = get_field('section_7');
     <div class="row mb-3">
         <div class="col-12 text-center">
             <h4 class="font-manrope text-uppercase font-weight-light">
-                Pick a category: <span class="text-warning">option 2</span>
+                <span class="text-warning">Option 2</span>: choose your own affirmation
             </h4>
         </div>
     </div>
@@ -397,7 +415,7 @@ $section_7 = get_field('section_7');
         <div class="col-12 text-center" data-aos="fade-up" data-aos-once="true">
             <div class="img-text-container category-container bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url(31); ?>)">
                 <a href="#" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
-                    Choose your own affirmation
+                    Submit my custom affirmation
                 </a>
             </div>
         </div>
