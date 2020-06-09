@@ -163,8 +163,9 @@ $section_7 = get_field('section_7');
 </div>
 
 <div class="text-center my-5">
-    <a href="content/meditation.mp3" alt="" class="btn btn-dark btn-lg rounded-0 hvr-underline-from-center animated infinite pulse slow" download>
-        Download meditation</a>
+    <a href="content/meditation.mp3" alt="" class="btn btn-dark btn-lg rounded-0 hvr-underline-from-center" download>
+        Download free meditation
+    </a>
     <p class="text-muted mt-2">
         3.4 MB&nbsp;&nbsp;|&nbsp;&nbsp;.mp3 format
     </p>
@@ -172,8 +173,15 @@ $section_7 = get_field('section_7');
 
 <hr class="w-75 my-5" />
 
-<div class="container-fluid my-5">
-    <div class="row py-5 my-5">
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 text-center font-manrope">
+            <h1 class="font-manrope text-uppercase text-warning font-weight-light m-0">
+                How it works?
+            </h1>
+        </div>
+    </div>
+    <div class="row my-5">
         <div class="col-12 col-md-4 text-center font-manrope">
             <h1 class="font-weight-light text-uppercase">
                 Step <span class="text-warning">1</span>
@@ -204,6 +212,30 @@ $section_7 = get_field('section_7');
 <hr class="w-75 my-5" />
 
 <div class="container mb-5">
+    <div class="row my-5">
+        <div class="col-12 text-center">
+            <h4 class="font-manrope text-uppercase font-weight-light">
+                Find the affirmation that fits you best
+            </h4>
+        </div>
+        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center my-4">
+            <?php $tags = get_tags('post_tag'); ?>
+            <select class="select2-selector form-control">
+                <option value="" disabled selected>Select a keyword</option>
+                <?php foreach ($tags as $tag) : ?>
+                    <option value=" AL">
+                        <?php echo esc_attr($tag->name); ?>
+                    </option>
+                <?php endforeach; ?>
+                </ul>
+            </select>
+            <a href="#" alt="" class="btn btn-dark btn-lg rounded-0 hvr-underline-from-center mt-5">
+                Search an related affirmation
+            </a>
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="col-12 text-center">
             <h4 class="font-manrope text-uppercase font-weight-light">
@@ -225,7 +257,7 @@ $section_7 = get_field('section_7');
 <div class="bg-dark">
     <div class="container pt-5">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-items-center">
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Sexuality"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -238,7 +270,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Free Will"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -251,7 +283,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Sport"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -264,7 +296,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Category"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -277,7 +309,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center ">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Category"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -290,7 +322,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Category"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -303,7 +335,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Category"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -316,7 +348,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center ">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Category"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -329,7 +361,7 @@ $section_7 = get_field('section_7');
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
                 <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
                     Choose "Category"
                     <i class="fa fa-chevron-right hvr-icon"></i>
@@ -362,7 +394,7 @@ $section_7 = get_field('section_7');
         </div>
     </div>
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center" data-aos="fade-up" data-aos-once="true">
             <div class="img-text-container category-container bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url(31); ?>)">
                 <a href="#" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
                     Choose your own affirmation

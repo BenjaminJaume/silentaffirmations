@@ -14,6 +14,9 @@ function load_stylesheet()
     wp_register_style('fontawesome', get_template_directory_uri() . '/css/vendor/fontawesome/css/all.min.css', '', '5.12.1', 'all');
     wp_enqueue_style('fontawesome');
 
+    wp_register_style('select-select2', get_template_directory_uri() . '/css/vendor/select2.min.css', '', '4.0.13', 'all');
+    wp_enqueue_style('select-select2');
+
     wp_register_style('bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap.min.css', '', '4.4.1', 'all');
     wp_enqueue_style('bootstrap');
 
@@ -38,8 +41,9 @@ add_action('wp_enqueue_scripts', 'load_jquery');
 
 function load_javascript()
 {
-    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', 'jquery', '4.4.1', true);
     wp_enqueue_script('aos', get_template_directory_uri() . '/js/vendor/aos.js', 'jquery', false, true);
+    wp_enqueue_script('select2', get_template_directory_uri() . '/js/vendor/select2.min.js', 'jquery', '4.0.13', true);
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', 'jquery', '4.4.1', true);
     wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', 'jquery', false, true);
 }
 add_action('wp_enqueue_scripts', 'load_javascript');
@@ -103,6 +107,7 @@ function create_posttype()
             'rewrite' => array('slug' => 'affirmations'),
             'show_in_rest' => true,
             'menu_icon'           => wp_get_attachment_url(74),
+            'taxonomies' => array('post_tag')
         )
     );
 }
@@ -221,3 +226,22 @@ function formatBytes($bytes, $precision = 0)
 
 // Flushing rules
 flush_rewrite_rules(false);
+
+// Disable useless fields when customers are checking out
+function custom_override_checkout_fields($fields)
+{
+    // unset( $fields['billing']['billing_first_name'] );
+    // unset( $fields['billing']['billing_last_name'] );
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_address_1']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_city']);
+    unset($fields['billing']['billing_postcode']);
+    // unset( $fields['billing']['billing_country'] );
+    unset($fields['billing']['billing_state']);
+    // unset( $fields['billing']['billing_email'] );
+    unset($fields['billing']['billing_phone']);
+
+    return $fields;
+}
+add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
