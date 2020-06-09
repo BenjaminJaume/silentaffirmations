@@ -214,22 +214,21 @@ $section_7 = get_field('section_7');
 <div class="container mb-5">
     <div class="row my-5">
         <div class="col-12 text-center">
-            <h2 class="text-muted font-weight-light m-0">
-                Let's start:
-            </h2>
             <h1 class="font-manrope text-uppercase font-weight-light">
                 Find the <span class="text-warning">affirmation</span> that fits <span class="text-warning">you</span> best
             </h1>
         </div>
-        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center mt-5">
+        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center">
+            <h2 class="text-muted font-weight-light">
+                Select a keyword
+            </h2>
             <?php $tags = get_tags('post_tag'); ?>
 
-            <form role="search" method="get" action="<?php bloginfo('url'); ?>">
-                <input type="hidden" name="s" value="" />
+            <form role="search" method="post" action="<?php echo get_site_url() . '/tag-affirmation'; ?>">
+                <!-- <input type="hidden" name="s" value="" /> -->
 
                 <div class="form-group">
-                    <label for="select2-tag">Select a keyword</label>
-                    <select class="custom-select custom-select-lg" type="search" name="tag" id="select2-tag" required="required" data-placeholder="Example: depression, self-love, mindfulness" data-allow-clear="1">
+                    <select class="custom-select custom-select-lg" type="search" name="tag" required="required" data-placeholder="Example: depression, self-love, mindfulness" data-allow-clear="1">
                         <option></option>
                         <?php foreach ($tags as $tag) : ?>
                             <option value="<?php echo esc_attr($tag->slug); ?>">

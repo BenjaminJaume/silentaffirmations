@@ -18,14 +18,10 @@
   }
 
   form {
-    input,
+    input:not([type="radio"]),
     select,
     textarea {
       @extend .form-control;
-    }
-
-    input[type="checkbox"] {
-      @extend .form-check-input;
     }
   }
 
@@ -50,10 +46,20 @@
   }
 
   #respond input#submit.alt,
-  a.button.alt,
   button.button.alt,
   input.button.alt {
     @extend .btn;
+    @extend .btn-dark;
+    @extend .rounded-0;
+
+    background-color: colors.$brand-color !important;
+
+    &:hover {
+      background-color: lighten(colors.$brand-color, 10%) !important;
+    }
+  }
+
+  a.button.alt {
     @extend .btn-dark;
     @extend .rounded-0;
 
