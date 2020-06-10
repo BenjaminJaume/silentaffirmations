@@ -4,8 +4,14 @@ get_header();
 
 $id = get_the_ID();
 
-?>
+if (get_the_title($id) == "Custom") {
+    $header = "Location: " . get_site_url();
+    header($header);
 
+    exit();
+}
+
+?>
 
 <div class="container my-5">
     <div class="row">

@@ -26,7 +26,7 @@ session_start();
 global $template;
 console($template);
 
-if (is_shop()) {
+if (is_shop() ||  is_product_category()) {
     $header = "Location: " . get_site_url();
     header($header);
 

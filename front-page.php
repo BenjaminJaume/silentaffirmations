@@ -218,7 +218,7 @@ $section_7 = get_field('section_7');
                 Find the <span class="text-warning">affirmation</span> that fits <span class="text-warning">you</span> best
             </h1>
         </div>
-        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center">
+        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center mt-3">
             <h2 class="text-muted font-weight-light">
                 Select a keyword
             </h2>
@@ -239,8 +239,8 @@ $section_7 = get_field('section_7');
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-dark rounded-0 hvr-underline-from-center">
-                    Search a related affirmation
+                <button type="submit" class="btn btn-lg btn-dark rounded-0 hvr-underline-from-center">
+                    Search
                     <i class="fas fa-search hvr-icon ml-1"></i>
                 </button>
             </form>
@@ -405,16 +405,16 @@ $section_7 = get_field('section_7');
     </div>
     <div class="row mb-3">
         <div class="col-12 text-center">
-            <h4 class="font-manrope text-uppercase font-weight-light">
+            <h2 class="font-manrope text-uppercase font-weight-light">
                 <span class="text-warning">Option 2</span>: choose your own affirmation
-            </h4>
+            </h2>
         </div>
     </div>
     <div class="row">
         <div class="col-12 text-center" data-aos="fade-up" data-aos-once="true">
             <div class="img-text-container category-container bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url(31); ?>)">
-                <a href="#" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
-                    Submit my custom affirmation
+                <a href="<?php echo get_site_url() . '/custom-affirmation'; ?>" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
+                    Submit my own affirmation
                 </a>
             </div>
         </div>
