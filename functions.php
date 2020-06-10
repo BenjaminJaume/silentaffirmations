@@ -249,17 +249,3 @@ function custom_override_checkout_fields($fields)
     return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
-
-// advanced search functionality
-function advanced_search_query($query)
-{
-    if ($query->is_search()) {
-        // tag search
-        if (isset($_GET['taglist']) && is_array($_GET['taglist'])) {
-            $query->set('tag_slug__and', $_GET['taglist']);
-        }
-
-        return $query;
-    }
-}
-add_action('pre_get_posts', 'advanced_search_query', 1000);

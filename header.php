@@ -76,7 +76,7 @@ if (is_shop() ||  is_product_category()) {
                     <?php
                     if (WC()->cart->get_cart_contents_count() > 0) { ?>
                         <a href="<?php echo get_site_url() . '/cart'; ?>" class="btn btn-warning rounded-0 text-nowrap">
-                            <?php echo count(WC()->cart->get_cart()); ?><i class="fa fa-shopping-cart ml-2"></i>
+                            <?php echo WC()->cart->get_cart_contents_count(); ?><i class="fa fa-shopping-cart ml-2"></i>
                         </a>
                     <?php } ?>
                 </div>

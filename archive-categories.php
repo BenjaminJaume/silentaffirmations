@@ -20,8 +20,8 @@ $q = get_posts($args);
 
 ?>
 
-<div class="container my-5">
-    <div class="row bg-dark">
+<div class="container mt-5">
+    <div class="row bg-dark sticky-top container-sticky-top">
         <div class="col-12 text-center py-3">
             <p class="text-white text-uppercase">
                 Step <span class="text-warning">1</span> out of 3
@@ -32,6 +32,13 @@ $q = get_posts($args);
         </div>
     </div>
     <div class="row my-5">
+        <div class="col-12 text-center">
+            <h2 class="font-manrope text-uppercase font-weight-light">
+                <span class="text-warning">Option 1</span>: select a category from below
+            </h2>
+        </div>
+    </div>
+    <div class="row">
         <?php foreach ($q as $id_category) {
             if (get_the_title($id_category) != "Custom") { ?>
                 <div class="col-12 col-md-6 text-center mx-auto">
@@ -79,6 +86,32 @@ $q = get_posts($args);
         <?php
             }
         } ?>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row mb-3">
+        <div class="col-12 text-center">
+            <h1 class="font-weight-light">
+                - OR -
+            </h1>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 text-center">
+            <h2 class="font-manrope text-uppercase font-weight-light">
+                <span class="text-warning">Option 2</span>: choose your own affirmation
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center" data-aos="fade-up" data-aos-once="true">
+            <div class="img-text-container category-container bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url(31); ?>)">
+                <a href="<?php echo get_site_url() . '/custom-musics'; ?>" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
+                    Submit my own affirmation
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 

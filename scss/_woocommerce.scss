@@ -22,6 +22,7 @@
     select,
     textarea {
       @extend .form-control;
+      @extend .rounded-0;
     }
   }
 
@@ -47,7 +48,10 @@
 
   #respond input#submit.alt,
   button.button.alt,
-  input.button.alt {
+  input.button.alt,
+  a.button,
+  .woocommerce-Button.button,
+  button[name="save_address"] {
     @extend .btn;
     @extend .btn-dark;
     @extend .rounded-0;
@@ -83,6 +87,20 @@
     @extend .text-uppercase;
     @extend .text-center;
     @extend .mb-5;
+  }
+
+  .woocommerce-tabs,
+  .related.products,
+  .product_meta,
+  .woocommerce-customer-details,
+  form.cart .quantity {
+    display: none;
+  }
+
+  #textarea-custom-affirmation,
+  .shop_table.woocommerce-checkout-review-order-table,
+  .woocommerce-checkout-payment {
+    border-radius: 0 !important;
   }
 }
 

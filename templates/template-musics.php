@@ -36,8 +36,8 @@ get_header();
         $title_affirmation = get_the_title($id_affirmation_chosen);
 
     ?>
-        <div class="container my-5">
-            <div class="row bg-dark">
+        <div class="container-fluid my-5">
+            <div class="row sticky-top container-sticky-top bg-dark mx-sm-3 mx-md-4 mx-lg-5">
                 <div class="col-12 text-center py-3">
                     <p class="text-white text-uppercase">
                         Step <span class="text-warning">3</span> out of 3</span>
@@ -47,9 +47,7 @@ get_header();
                     </h1>
                 </div>
             </div>
-        </div>
-        <div class="container my-5">
-            <div class="row">
+            <div class="row py-5 mx-sm-3 mx-md-4 mx-lg-5">
                 <div class="col-12 col-md-5 col-lg-4 mx-auto">
                     <div class="text-center">
                         <p class="text-muted mt-0">
@@ -81,7 +79,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="row my-5">
+            <div class="row mx-sm-3 mx-md-4 mx-lg-5">
                 <div class="col-12 col-sm-6 text-center text-sm-right mb-3">
                     <form action="<?php echo get_site_url() . '/affirmations'; ?>" method="post">
                         <button type="submit" class="btn btn-dark rounded-0 hvr-icon-back">
@@ -102,7 +100,7 @@ get_header();
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-12 col-sm-10 text-center mx-auto">
                     <p class="text-muted font-jost">
                         <u>Reminder</u>: in the "How it works" page, we explain that whenever
@@ -112,44 +110,44 @@ get_header();
                     </p>
                 </div>
             </div>
-        </div>
+            <!-- </div> -->
 
-        <?php
+            <?php
 
-        /*
+            /*
         *  Query posts for a relationship value.
         *  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
         */
 
-        $products = get_posts(array(
-            'post_type' => 'product',
-            'posts_per_page' => -1,
-            'relation' => 'AND',
-            'orderby' => 'music',
-            'order' => 'ASC',
-            'meta_query' => array(
-                array(
-                    'key' => 'category',
-                    'value' => '"' . $id_category_chosen . '"',
-                    'compare' => 'LIKE'
-                ),
-                array(
-                    'key' => 'affirmation',
-                    'value' => '"' . $id_affirmation_chosen . '"',
-                    'compare' => 'LIKE'
+            $products = get_posts(array(
+                'post_type' => 'product',
+                'posts_per_page' => -1,
+                'relation' => 'AND',
+                'orderby' => 'music',
+                'order' => 'ASC',
+                'meta_query' => array(
+                    array(
+                        'key' => 'category',
+                        'value' => '"' . $id_category_chosen . '"',
+                        'compare' => 'LIKE'
+                    ),
+                    array(
+                        'key' => 'affirmation',
+                        'value' => '"' . $id_affirmation_chosen . '"',
+                        'compare' => 'LIKE'
+                    )
                 )
-            )
-        ));
+            ));
 
-        ?>
+            ?>
 
-        <?php if ($products) :
-            $currency = get_woocommerce_currency();
-            $currency_symbol = get_woocommerce_currency_symbol(); ?>
+            <?php if ($products) :
+                $currency = get_woocommerce_currency();
+                $currency_symbol = get_woocommerce_currency_symbol(); ?>
 
-            <!-- <hr class="w-75"> -->
+                <!-- <hr class="w-75"> -->
 
-            <div class="container-fluid my-5">
+                <!-- <div class="container-fluid my-5"> -->
                 <?php foreach ($products as $prod) :
                     // $prod is a WordPress Post Object
                     $product_ID = $prod->ID;
@@ -216,57 +214,57 @@ get_header();
                         </div>
                     </div>
                 <?php } ?>
-            </div>
-        <?php else : ?>
-            <hr class="w-75">
+        </div>
+    <?php else : ?>
+        <hr class="w-75">
 
-            <div class="container-fluid my-5">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <p class="font-big font-jost font-weight-light">
-                            Unfortunatly, there are no musics available for this category with this affirmation.<br />
-                            Please come back check it later.
-                        </p>
+        <div class="container-fluid my-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="font-big font-jost font-weight-light">
+                        Unfortunatly, there are no musics available for this category with this affirmation.<br />
+                        Please come back check it later.
+                    </p>
+                </div>
+            </div>
+            <form action="<?php echo get_site_url() . '/musics'; ?>" method="post" class="row justify-content-center text-center my-5">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-3">
+                    <div class="form-group mb-5">
+                        <label for="select_category" class="text-warning text-uppercase">Category</label>
+                        <select name="id_category_chosen" id="select_category" class="form-control rounded-0">
+                            <?php foreach ($query_categories as $id) {
+                                echo '<option value="' . $id . '">';
+                                echo get_the_title($id);
+                                echo '</option>';
+                            } ?>
+                        </select>
                     </div>
                 </div>
-                <form action="<?php echo get_site_url() . '/musics'; ?>" method="post" class="row justify-content-center text-center my-5">
-                    <div class="col-12 col-sm-10 col-md-6 col-lg-3">
-                        <div class="form-group mb-5">
-                            <label for="select_category" class="text-warning text-uppercase">Category</label>
-                            <select name="id_category_chosen" id="select_category" class="form-control rounded-0">
-                                <?php foreach ($query_categories as $id) {
-                                    echo '<option value="' . $id . '">';
-                                    echo get_the_title($id);
-                                    echo '</option>';
-                                } ?>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div class="col-12 col-sm-10 col-md-6 col-lg-3">
-                        <div class="form-group">
-                            <label for="select_affirmation" class="text-warning text-uppercase">Affirmation</label>
-                            <select name="id_affirmation_chosen" id="select_affirmation" class="form-control rounded-0">
-                                <?php foreach ($query_affirmations as $id) {
-                                    $c = get_field('category', $id);
-                                    echo '<option value="' . $id . '">';
-                                    echo $c[0]->post_title;
-                                    echo ' - ';
-                                    echo wp_trim_words(get_the_excerpt($id), 5);
-                                    echo '</option>';
-                                } ?>
-                            </select>
-                        </div>
+                <div class="col-12 col-sm-10 col-md-6 col-lg-3">
+                    <div class="form-group">
+                        <label for="select_affirmation" class="text-warning text-uppercase">Affirmation</label>
+                        <select name="id_affirmation_chosen" id="select_affirmation" class="form-control rounded-0">
+                            <?php foreach ($query_affirmations as $id) {
+                                $c = get_field('category', $id);
+                                echo '<option value="' . $id . '">';
+                                echo $c[0]->post_title;
+                                echo ' - ';
+                                echo wp_trim_words(get_the_excerpt($id), 5);
+                                echo '</option>';
+                            } ?>
+                        </select>
                     </div>
+                </div>
 
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center m-0">
-                            Retry
-                            <i class="fa fa-search hvr-icon ml-2"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center m-0">
+                        Retry
+                        <i class="fa fa-search hvr-icon ml-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
 </div>
 
 <?php endif; ?>

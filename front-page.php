@@ -171,57 +171,57 @@ $section_7 = get_field('section_7');
     </p>
 </div>
 
-<hr class="w-75 my-5" />
-
-<div class="container my-5">
-    <div class="row">
-        <div class="col-12 text-center font-manrope">
-            <h1 class="font-manrope text-uppercase text-warning font-weight-light m-0">
-                How it works?
-            </h1>
+<div class="bg-dark">
+    <div class="container my-5 py-5">
+        <div class="row">
+            <div class="col-12 text-center font-manrope">
+                <h1 class="font-manrope text-uppercase text-warning font-weight-light m-0">
+                    How it works?
+                </h1>
+            </div>
         </div>
-    </div>
-    <div class="row my-5">
-        <div class="col-12 col-md-4 text-center font-manrope">
-            <h1 class="font-weight-light text-uppercase">
-                Step <span class="text-warning">1</span>
-            </h1>
-            <h2 class="font-weight-light font-jost">
-                Choose a category
-            </h2>
-        </div>
-        <div class="col-12 col-md-4 text-center font-manrope">
-            <h1 class="font-weight-light text-uppercase">
-                Step <span class="text-warning">2</span>
-            </h1>
-            <h2 class="font-weight-light font-jost">
-                Choose an affirmation
-            </h2>
-        </div>
-        <div class="col-12 col-md-4 text-center font-manrope">
-            <h1 class="font-weight-light text-uppercase">
-                Step <span class="text-warning">3</span>
-            </h1>
-            <h2 class="font-weight-light font-jost">
-                Choose a music
-            </h2>
+        <div class="row mt-5">
+            <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
+                <h1 class="text-white font-weight-light text-uppercase">
+                    Step <span class="text-warning">1</span>
+                </h1>
+                <h2 class="text-white font-weight-light font-jost">
+                    Choose a category
+                </h2>
+            </div>
+            <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
+                <h1 class="text-white font-weight-light text-uppercase">
+                    Step <span class="text-warning">2</span>
+                </h1>
+                <h2 class="text-white font-weight-light font-jost">
+                    Choose an affirmation
+                </h2>
+            </div>
+            <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
+                <h1 class="text-white font-weight-light text-uppercase">
+                    Step <span class="text-warning">3</span>
+                </h1>
+                <h2 class="text-white font-weight-light font-jost">
+                    Choose a music
+                </h2>
+            </div>
         </div>
     </div>
 </div>
 
-<hr class="w-75 my-5" />
-
-<div class="container mb-5">
-    <div class="row my-5">
+<div class="container my-5">
+    <div class="row">
         <div class="col-12 text-center">
-            <h1 class="font-manrope text-uppercase font-weight-light">
+            <h1 class="font-manrope text-uppercase font-weight-light mb-3">
                 Find the <span class="text-warning">affirmation</span> that fits <span class="text-warning">you</span> best
             </h1>
-        </div>
-        <div class="col-12 col-sm-10 col-md-8 mx-auto text-center mt-3">
-            <h2 class="text-muted font-weight-light">
+            <h2 class="text-muted font-weight-light m-0">
                 Select a keyword
             </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto text-center mt-3">
             <?php $tags = get_tags('post_tag'); ?>
 
             <form role="search" method="post" action="<?php echo get_site_url() . '/tag-affirmation'; ?>">
@@ -246,7 +246,7 @@ $section_7 = get_field('section_7');
             </form>
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row my-5">
         <div class="col-12 text-center">
             <h1 class="font-weight-light">
                 - OR -
@@ -413,7 +413,7 @@ $section_7 = get_field('section_7');
     <div class="row">
         <div class="col-12 text-center" data-aos="fade-up" data-aos-once="true">
             <div class="img-text-container category-container bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url(31); ?>)">
-                <a href="<?php echo get_site_url() . '/custom-affirmation'; ?>" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
+                <a href="<?php echo get_site_url() . '/custom-musics'; ?>" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
                     Submit my own affirmation
                 </a>
             </div>

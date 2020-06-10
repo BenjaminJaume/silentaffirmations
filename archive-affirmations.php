@@ -23,7 +23,7 @@ if (isset($_POST['id_category_chosen'])) {
                 </h1>
             </div>
         </div>
-        <div class="row my-2 py-3">
+        <div class="row sticky-top container-sticky-top bg-white my-2 py-3">
             <div class="col-12 text-center">
                 <p class="mb-0">
                     Category:
