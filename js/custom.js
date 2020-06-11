@@ -1,9 +1,5 @@
 AOS.init();
 
-$(document).ready(function () {
-    $('.select2-selector').select2();
-});
-
 $(function () {
     $('select').each(function () {
         $(this).select2({

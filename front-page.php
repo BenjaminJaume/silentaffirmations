@@ -224,7 +224,7 @@ $section_7 = get_field('section_7');
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto text-center mt-3">
             <?php $tags = get_tags('post_tag'); ?>
 
-            <form role="search" method="post" action="<?php echo get_site_url() . '/tag-affirmation'; ?>">
+            <form role="search" method="post" action="<?php echo get_site_url(); ?>">
                 <!-- <input type="hidden" name="s" value="" /> -->
 
                 <div class="form-group">
@@ -235,7 +235,6 @@ $section_7 = get_field('section_7');
                                 <?php echo esc_attr($tag->name); ?>
                             </option>
                         <?php endforeach; ?>
-                        </ul>
                     </select>
                 </div>
 
