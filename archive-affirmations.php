@@ -35,7 +35,7 @@ if (isset($_POST['id_category_chosen'])) {
         </div>
         <div class="row my-3">
             <div class="col-12 text-center">
-                <a href=" <?php echo get_site_url() . '/categories'; ?>" class="btn btn-outline-dark rounded-0 hvr-icon-back">
+                <a href="<?php echo get_site_url() . '/categories'; ?>" class="btn btn-outline-dark rounded-0 hvr-icon-back">
                     <i class="fa fa-chevron-left hvr-icon mr-1"></i>
                     Go back to categories
                 </a>

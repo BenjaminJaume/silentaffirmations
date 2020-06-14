@@ -26,11 +26,11 @@ $section_7 = get_field('section_7');
             <?php echo wp_get_attachment_image(46, [350, 350], false, 'class=img-fluid'); ?>
 
             <div class="my-5">
-                <a href="/get-started" alt="" class="btn btn-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
+                <a href="<?php echo get_site_url() . '/categories'; ?>" alt="" class="btn btn-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
                     Get Started
                 </a>
 
-                <a href="#section-1" alt="" class="btn btn-outline-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
+                <a href="#more" alt="" class="btn btn-outline-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
                     More
                 </a>
             </div>
@@ -38,7 +38,7 @@ $section_7 = get_field('section_7');
     </div>
 </div>
 
-<div class="container-fluid m-0 p-0">
+<div class="container-fluid m-0 p-0" id="more">
     <div class="img-text-container video-container video-banner-front-page">
         <video autoplay loop muted preload="auto" poster="<?php echo wp_get_attachment_url(40); ?>)">
             <source src="<?php echo get_template_directory_uri() . '/medias/videos/neurons.mp4' ?>" type="video/mp4">

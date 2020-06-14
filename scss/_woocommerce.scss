@@ -102,6 +102,22 @@
   .woocommerce-checkout-payment {
     border-radius: 0 !important;
   }
+
+  .woocommerce-MyAccount-navigation {
+    ul {
+      @extend .list-group;
+      @extend .mb-5;
+
+      li {
+        @extend .list-group-item;
+        @extend .bg-light;
+
+        a {
+          @extend .text-dark;
+        }
+      }
+    }
+  }
 }
 
 #wrapper-musics {
