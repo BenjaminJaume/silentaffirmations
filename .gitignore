@@ -24,4 +24,5 @@ node_modules/
 
 # Other
 *.txt
-.vscode/
+.vscode
+.vscode/*
