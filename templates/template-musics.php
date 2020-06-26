@@ -101,11 +101,11 @@ get_header();
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-12 col-sm-10 text-center mx-auto">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
                     <p class="text-muted font-jost">
-                        <u>Reminder</u>: in the "How it works" page, we explain that whenever
-                        you buy a song, you have access tow 2 files: one with your affirmation WITH the music
-                        you choose, the second one with the raw high frequency affirmation.<br />
+                        <u>Reminder</u>: whenever you buy a song, you have access tow 2 files:
+                        one with your affirmation WITH the music you choose, the second one
+                        with the raw high frequency affirmation.<br />
                         You get 2 files whenever you buy a Silent Affirmation with us!
                     </p>
                 </div>
@@ -208,7 +208,7 @@ get_header();
                     <div class="row mt-5c">
                         <div class="col-12 text-center">
                             <a href="<?php echo get_site_url() . '/cart'; ?>" class="btn btn-lg btn-dark rounded-0 animated infinite pulse slow">
-                                [<?php echo count(WC()->cart->get_cart()); ?>] Go to your cart
+                                Go to your cart [<?php echo count(WC()->cart->get_cart()); ?>]
                                 <i class="fa fa-shopping-cart align-middle ml-2"></i>
                             </a>
                         </div>

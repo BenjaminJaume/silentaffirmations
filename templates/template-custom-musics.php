@@ -27,7 +27,6 @@ get_header();
 ?>
 
 <div id="wrapper-musics">
-
     <div class="container my-5">
         <div class="row bg-dark mt-5 mb-3">
             <div class="col-12 text-center py-3">
@@ -46,7 +45,6 @@ get_header();
                 </h1>
             </div>
         </div>
-
     </div>
 
     <?php
@@ -82,7 +80,7 @@ get_header();
 
     <!-- <hr class="w-75"> -->
 
-    <div class="container my-5">
+    <div class="container-fluid my-5">
         <?php foreach ($products as $prod) :
             // $prod is a WordPress Post Object
             $product_ID = $prod->ID;
@@ -138,7 +136,7 @@ get_header();
             <div class="row mt-5">
                 <div class="col-12 text-center">
                     <a href="<?php echo get_site_url() . '/cart'; ?>" class="btn btn-lg btn-dark rounded-0 animated infinite pulse slow">
-                        [<?php echo count(WC()->cart->get_cart()); ?>] Go to your cart
+                        Go to your cart [<?php echo count(WC()->cart->get_cart()); ?>]
                         <i class="fa fa-shopping-cart align-middle ml-2"></i>
                     </a>
                 </div>

@@ -29,16 +29,12 @@ $section_7 = get_field('section_7');
                 <a href="<?php echo get_site_url() . '/categories'; ?>" alt="" class="btn btn-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
                     Get Started
                 </a>
-
-                <a href="#more" alt="" class="btn btn-outline-dark font-weight-light hvr-underline-from-center btn-lg rounded-0">
-                    More
-                </a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid m-0 p-0" id="more">
+<div class="container-fluid m-0 p-0">
     <div class="img-text-container video-container video-banner-front-page">
         <video autoplay loop muted preload="auto" poster="<?php echo wp_get_attachment_url(40); ?>)">
             <source src="<?php echo get_template_directory_uri() . '/medias/videos/neurons.mp4' ?>" type="video/mp4">
@@ -162,14 +158,14 @@ $section_7 = get_field('section_7');
     </div>
 </div>
 
-<div class="text-center my-5">
+<!-- <div class="text-center my-5">
     <a href="content/meditation.mp3" alt="" class="btn btn-dark btn-lg rounded-0 hvr-underline-from-center" download>
         Download free meditation
     </a>
     <p class="text-muted mt-2">
         3.4 MB&nbsp;&nbsp;|&nbsp;&nbsp;.mp3 format
     </p>
-</div>
+</div> -->
 
 <div class="bg-dark">
     <div class="container my-5 py-5">

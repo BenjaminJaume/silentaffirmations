@@ -64,7 +64,7 @@ if (isset($_POST['id_category_chosen'])) {
 
         ?>
 
-        <?php if ($affirmations) : ?>
+        <?php if ($affirmations) { ?>
             <div class="container-fluid my-5">
                 <?php foreach ($affirmations as $affirmation) :
                     // $prod is a WordPress Post Object
@@ -113,7 +113,17 @@ if (isset($_POST['id_category_chosen'])) {
                     </a>
                 </div>
             </div>
-        <?php endif; ?>
+        <?php } else { ?>
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="font-big">
+                            Sorry but there is no affirmations available for this category yet
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
     </div>
 <?php } else { ?>
     <div class="container my-5">
