@@ -24,4 +24,4 @@ node_modules/
 
 # Other
 *.txt
-sftp.json
+.vscode/
