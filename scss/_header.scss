@@ -42,4 +42,8 @@ header {
       border-color: transparent;
     }
   }
+
+  .glink.nturl.notranslate {
+    @extend .ml-2;
+  }
 }

@@ -81,15 +81,19 @@ $section_7 = get_field('section_7');
             </p>
         </div>
         <div class="col-12 col-md-6 text-center">
-            <!-- <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="hdttps://www.youtube.com/embed/8942TQpgLZI" frameborder="0" allowfullscreen></iframe>
-            </div> -->
-            <div class="img-text-container">
-                <?php echo wp_get_attachment_image(48, [350, 350], false, 'class=img-fluid frame'); ?>
-                <h1 class="centered text-white m-0 p-0">
-                    <i class="fa fa-play fa-2x"></i>
-                </h1>
-            </div>
+            <?php 
+            echo wp_video_shortcode( [
+                'src'      => 'https://silentaffirmations.com/wp-content/uploads/2020/07/SA-Change-from-within-1.mp4',
+                'poster'   => 'https://silentaffirmations.com/wp-content/uploads/2020/07/GIFT-Intro-SA.gif',
+                'loop'     => 'true',
+                'autoplay' => 'false',
+                'preload'  => 'metadata',
+                'height'   => 360,
+                'width'    => empty( $content_width ) ? 640 : $content_width,
+                'class'    => 'img-fluid', // 'class' attr for `<video>` element. Default 'wp-video-shortcode'
+                'id'       => '', // 'id' attr for `<video>` element. Default 'video-{$post_id}-{$instances}'.
+            ] );
+            ?>
         </div>
     </div>
 
@@ -97,15 +101,19 @@ $section_7 = get_field('section_7');
 
     <div class="row align-items-center">
         <div class="col-12 col-md-6 order-2 order-md-1 text-center">
-            <!-- <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="dhttps://www.youtube.com/embed/8942TQpgLZI" frameborder="0" allowfullscreen></iframe>
-            </div> -->
-            <div class="img-text-container">
-                <?php echo wp_get_attachment_image(47, [350, 350], false, 'class=img-fluid frame'); ?>
-                <h1 class="centered text-white m-0 p-0">
-                    <i class="fa fa-play fa-2x"></i>
-                </h1>
-            </div>
+            <?php 
+            echo wp_video_shortcode( [
+                'src'      => 'https://silentaffirmations.com/wp-content/uploads/2020/07/SA-Change-from-within-1.mp4',
+                'poster'   => 'https://silentaffirmations.com/wp-content/uploads/2020/07/GIFT-Intro-SA.gif',
+                'loop'     => 'true',
+                'autoplay' => 'false',
+                'preload'  => 'metadata',
+                'height'   => 360,
+                'width'    => empty( $content_width ) ? 640 : $content_width,
+                'class'    => 'img-fluid', // 'class' attr for `<video>` element. Default 'wp-video-shortcode'
+                'id'       => '', // 'id' attr for `<video>` element. Default 'video-{$post_id}-{$instances}'.
+            ] );
+            ?>
         </div>
         <div class="col-12 col-md-6 text-center text-md-right order-1 order-md-2">
             <div class="font-manrope">
@@ -171,8 +179,8 @@ $section_7 = get_field('section_7');
     <div class="container my-5 py-5">
         <div class="row">
             <div class="col-12 text-center font-manrope">
-                <h1 class="font-manrope text-uppercase text-warning font-weight-light m-0">
-                    How it works?
+                <h1 class="font-manrope text-white text-uppercase font-weight-light m-0">
+                    How to <span class="text-warning">get</span> your <span class="text-warning">affirmation</span>?
                 </h1>
             </div>
         </div>
@@ -208,211 +216,33 @@ $section_7 = get_field('section_7');
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="font-manrope text-uppercase font-weight-light mb-3">
+            <h1 class="font-manrope text-uppercase font-weight-light mb-5">
                 Find the <span class="text-warning">affirmation</span> that fits <span class="text-warning">you</span> best
             </h1>
-            <h2 class="text-muted font-weight-light m-0">
-                Select a keyword
-            </h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto text-center mt-3">
-            <?php $tags = get_tags('post_tag'); ?>
-
-            <form role="search" method="post" action="<?php echo get_site_url(); ?>">
-                <!-- <input type="hidden" name="s" value="" /> -->
-
-                <div class="form-group">
-                    <select class="custom-select custom-select-lg" type="search" name="tag" required="required" data-placeholder="Example: depression, self-love, mindfulness" data-allow-clear="1">
-                        <option></option>
-                        <?php foreach ($tags as $tag) : ?>
-                            <option value="<?php echo esc_attr($tag->slug); ?>">
-                                <?php echo esc_attr($tag->name); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-lg btn-dark rounded-0 hvr-underline-from-center">
-                    Search
-                    <i class="fas fa-search hvr-icon ml-1"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-    <div class="row my-5">
-        <div class="col-12 text-center">
-            <h1 class="font-weight-light">
-                - OR -
-            </h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 text-center">
-            <h4 class="font-manrope text-uppercase font-weight-light">
-                <span class="text-warning">Option 1</span>: pick a category
-            </h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="font-jost text-dark font-weight-light text-uppercase animated infinite slower pulse">
-                <i class="far fa-arrow-alt-circle-down"></i>
-                These are our categories
-                <i class="far fa-arrow-alt-circle-down"></i>
-            </h1>
+            <a href="<?php echo get_site_url() . '/categories'; ?>" alt="" class="btn btn-dark btn-lg font-weight-light hvr-underline-from-center btn-lg rounded-0 animated infinite slow pulse">
+                Get Started
+            </a>
         </div>
     </div>
 </div>
 
-<div class="bg-dark">
-    <div class="container pt-5">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center align-items-center">
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Sexuality"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(41); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Sexuality
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Free Will"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(34); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Free Will
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Sport"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(44); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Sport
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Category"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(50); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Category
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Category"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(51); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Category
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Category"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(52); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Category
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Category"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(42); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Category
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Category"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(33); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Category
-                        </h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center" data-aos="flip-right" data-aos-once="true">
-                <a href="#" alt="" class="btn btn-outline-light rounded-0 mx-auto hvr-icon-forward mb-3">
-                    Choose "Category"
-                    <i class="fa fa-chevron-right hvr-icon"></i>
-                </a>
-                <a href="#" alt="">
-                    <div class="img-text-container category-container bg-cover frame-hover" style="background-image: url(<?php echo wp_get_attachment_url(28); ?>)">
-                        <h1 class="centered text-white font-manrope text-decoration-none m-0 p-0">
-                            Category
-                        </h1>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<hr class="w-75 my-5" />
 
 <div class="container my-5">
-    <div class="row mb-3">
-        <div class="col-12 text-center">
-            <h1 class="font-weight-light">
-                - OR -
-            </h1>
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6 col-lg-4 text-center mb-3 mb-md-0">
+        <?php echo wp_get_attachment_image(49, 'medium', false, 'class=img-fluid'); ?>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-8 text-center text-md-left">
+                    <blockquote class="blockquote">
+  <p class="mb-0">If we understand how to manage our beliefs, thoughts and feelings,
+our experiences, will change, our expressions will be more authentic.
+…we become our own MASTER</p>
+  <footer class="blockquote-footer"><b>Rene</b>, founder of "SilentChange Production" and "SilentAffirmations"</footer>
+</blockquote>
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-12 text-center">
-            <h2 class="font-manrope text-uppercase font-weight-light">
-                <span class="text-warning">Option 2</span>: choose your own affirmation
-            </h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 text-center" data-aos="fade-up" data-aos-once="true">
-            <div class="img-text-container category-container bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url(31); ?>)">
-                <a href="<?php echo get_site_url() . '/custom-musics'; ?>" alt="" class="centered btn btn-lg btn-dark rounded-0 font-jost font-bigger text-uppercase hvr-underline-from-center">
-                    Submit my own affirmation
-                </a>
-            </div>
-        </div>
+
+        
     </div>
 </div>
 

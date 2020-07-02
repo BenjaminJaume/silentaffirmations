@@ -62,6 +62,10 @@ if (is_shop() ||  is_product_category()) {
                     'walker'            => new WP_Bootstrap_Navwalker(),
                 ));
                 ?>
+                
+                <div class="d-flex mx-auto">
+                    <?php echo do_shortcode('[gtranslate]'); ?>
+                </div>
 
                 <div class="d-flex justify-content-center mx-auto my-2 my-lg-0">
                     <a href="<?php echo get_site_url() . '/my-account'; ?>" class="btn btn-outline-warning rounded-0 text-uppercase text-nowrap hvr-glow px-3 mx-3">

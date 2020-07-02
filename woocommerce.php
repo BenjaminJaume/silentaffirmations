@@ -8,7 +8,6 @@ if (is_product()) {
 
     $terms = get_the_terms($post->ID, 'product_cat');
     foreach ($terms as $term) {
-        console($term->term_id);
         if ($term->term_id != 36) {
             $header = "Location: " . get_site_url();
             header($header);
@@ -47,11 +46,7 @@ if (is_product()) {
     </div>
 
     <hr class="w-50 my-5" />
-<?php
-}
-
-
-?>
+<?php } ?>
 
 <div class="container my-5">
     <div class="row">

@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "hover.css": "^2.3.2",
     "normalize.css": "^8.0.1",
+    "sass": "^1.26.9",
     "scss": "^0.2.4",
     "select2": "^4.0.13"
   },

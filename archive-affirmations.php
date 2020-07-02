@@ -76,7 +76,7 @@ if (isset($_POST['id_category_chosen'])) {
                         <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
                             <p class="h2 font-jost font-weight-light">
                                 &quot;
-                                <?php echo get_the_excerpt($affirmation_ID); ?>
+                                <?php echo strip_tags(get_the_content($affirmation_ID)); ?>
                                 &quot;
                             </p>
 
@@ -129,7 +129,7 @@ if (isset($_POST['id_category_chosen'])) {
     <div class="container my-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1>
+                <h1 class="font-manrope text-danger mb-5">
                     Please choose a category first
                 </h1>
                 <a href="<?php echo get_site_url() . '/categories'; ?>" class="btn btn-dark rounded-0 hvr-icon-back">

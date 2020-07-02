@@ -12,8 +12,8 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <p class="h5 text-muted font-italic m-0 p-0">
-                    - Reprogram your subconscious mind -
+                <p class="h5 text-muted m-0 p-0">
+                    Reprogram your subconscious mind
                 </p>
             </div>
         </div>
