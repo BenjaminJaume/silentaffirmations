@@ -21,7 +21,7 @@ $q = get_posts($args);
 ?>
 
 <div class="container mt-5">
-    <div class="row bg-dark sticky-top container-sticky-top">
+    <div class="row bg-dark">
         <div class="col-12 text-center py-3">
             <p class="text-white text-uppercase">
                 Step <span class="text-warning">1</span> out of 3
@@ -55,7 +55,7 @@ $q = get_posts($args);
 
                         <div class="img-text-container category-container-shop bg-cover frame" style="background-image: url(<?php echo wp_get_attachment_url($id_image); ?>)">
                             <div class="centered">
-                                <h3 class="centered text-dark bg-white-75 font-jost font-weight-light border border-dark p-2">
+                                <h3 class="text-dark bg-white-75 font-jost font-weight-light border border-dark p-2">
                                     <?php echo get_the_title($id_category); ?>
                                 </h3>
                             </div>
@@ -141,7 +141,7 @@ $q = get_posts($args);
         </div>
     </div>
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
         <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
             <div class="form-group">
                 <textarea name="custom_affirmation" class="form-control rounded-0" id="custom-affirmation" rows="3" placeholder="Type your affirmation here... (max. 500 letters)" maxlength="500" required></textarea>

@@ -19,6 +19,8 @@ session_start();
     <link rel=" icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/favicon-16x16.png'; ?>">
     <link rel=" manifest" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/site.webmanifest'; ?>">
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <?php wp_head(); ?>
 </head>
 
@@ -62,7 +64,7 @@ if (is_shop() ||  is_product_category()) {
                     'walker'            => new WP_Bootstrap_Navwalker(),
                 ));
                 ?>
-                
+
                 <div class="d-flex mx-auto">
                     <?php echo do_shortcode('[gtranslate]'); ?>
                 </div>
