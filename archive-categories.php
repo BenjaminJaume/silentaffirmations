@@ -6,9 +6,6 @@ Template Name: Categories
 
 get_header();
 
-$_SESSION["id_category_chosen"];
-$_SESSION["id_affirmation_chosen"];
-
 // Get all the custom posts
 $args = [
     'post_type'      => 'categories',
@@ -142,16 +139,16 @@ $q = get_posts($args);
     </div>
     <div class="row">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
-        <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
-            <div class="form-group">
-                <textarea name="custom_affirmation" class="form-control rounded-0" id="custom-affirmation" rows="3" placeholder="Type your affirmation here... (max. 500 letters)" maxlength="500" required></textarea>
-            </div>
+            <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
+                <div class="form-group">
+                    <textarea name="custom_affirmation" class="form-control rounded-0" id="custom-affirmation" rows="3" placeholder="Type your affirmation here... (max. 500 letters)" maxlength="500" required></textarea>
+                </div>
 
-            <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-grow">
-                Continue
-                <i class="fa fa-chevron-right hvr-icon ml-2"></i>
-            </button>
-        </form>
+                <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-grow">
+                    Continue
+                    <i class="fa fa-chevron-right hvr-icon ml-2"></i>
+                </button>
+            </form>
 
         </div>
     </div>
