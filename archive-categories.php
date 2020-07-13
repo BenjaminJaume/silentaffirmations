@@ -38,7 +38,7 @@ $q = get_posts($args);
     <div class="row">
         <?php foreach ($q as $id_category) {
             if (get_the_title($id_category) != "Custom") { ?>
-                <div class="col-12 col-md-6 col-lg-4 text-center mx-auto">
+                <div class="col-12 col-md-6 text-center mx-auto">
                     <?php
 
                     $image = get_field('image', $id_category);

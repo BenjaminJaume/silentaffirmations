@@ -81,19 +81,9 @@ $section_7 = get_field('section_7');
             </p>
         </div>
         <div class="col-12 col-md-6 text-center">
-            <?php 
-            echo wp_video_shortcode( [
-                'src'      => 'https://silentaffirmations.com/wp-content/uploads/2020/07/SA-Change-from-within-1.mp4',
-                'poster'   => 'https://silentaffirmations.com/wp-content/uploads/2020/07/GIFT-Intro-SA.gif',
-                'loop'     => 'true',
-                'autoplay' => 'false',
-                'preload'  => 'metadata',
-                'height'   => 360,
-                'width'    => empty( $content_width ) ? 640 : $content_width,
-                'class'    => 'img-fluid', // 'class' attr for `<video>` element. Default 'wp-video-shortcode'
-                'id'       => '', // 'id' attr for `<video>` element. Default 'video-{$post_id}-{$instances}'.
-            ] );
-            ?>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/1EVDfqO0w-c?loop=false" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
@@ -101,19 +91,9 @@ $section_7 = get_field('section_7');
 
     <div class="row align-items-center">
         <div class="col-12 col-md-6 order-2 order-md-1 text-center">
-            <?php 
-            echo wp_video_shortcode( [
-                'src'      => 'https://silentaffirmations.com/wp-content/uploads/2020/07/SA-Change-from-within-1.mp4',
-                'poster'   => 'https://silentaffirmations.com/wp-content/uploads/2020/07/GIFT-Intro-SA.gif',
-                'loop'     => 'true',
-                'autoplay' => 'false',
-                'preload'  => 'metadata',
-                'height'   => 360,
-                'width'    => empty( $content_width ) ? 640 : $content_width,
-                'class'    => 'img-fluid', // 'class' attr for `<video>` element. Default 'wp-video-shortcode'
-                'id'       => '', // 'id' attr for `<video>` element. Default 'video-{$post_id}-{$instances}'.
-            ] );
-            ?>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/7mTsmp4bba4?loop=false" allowfullscreen></iframe>
+            </div>
         </div>
         <div class="col-12 col-md-6 text-center text-md-right order-1 order-md-2">
             <div class="font-manrope">
@@ -175,51 +155,43 @@ $section_7 = get_field('section_7');
     </p>
 </div> -->
 
-<div class="bg-dark">
-    <div class="container my-5 py-5">
-        <div class="row">
-            <div class="col-12 text-center font-manrope">
-                <h1 class="font-manrope text-white text-uppercase font-weight-light m-0">
-                    How to <span class="text-warning">get</span> your <span class="text-warning">affirmation</span>?
-                </h1>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
-                <h1 class="text-white font-weight-light text-uppercase">
-                    Step <span class="text-warning">1</span>
-                </h1>
-                <h2 class="text-white font-weight-light font-jost">
-                    Choose a category
-                </h2>
-            </div>
-            <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
-                <h1 class="text-white font-weight-light text-uppercase">
-                    Step <span class="text-warning">2</span>
-                </h1>
-                <h2 class="text-white font-weight-light font-jost">
-                    Choose an affirmation
-                </h2>
-            </div>
-            <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
-                <h1 class="text-white font-weight-light text-uppercase">
-                    Step <span class="text-warning">3</span>
-                </h1>
-                <h2 class="text-white font-weight-light font-jost">
-                    Choose a music
-                </h2>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container my-5">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="font-manrope text-uppercase font-weight-light mb-5">
+<div class="container-fluid my-5">
+    <div class="row bg-dark py-5">
+        <div class="col-12 text-center font-manrope">
+            <h1 class="font-manrope text-white text-uppercase font-weight-light m-0">
                 Find the <span class="text-warning">affirmation</span> that fits <span class="text-warning">you</span> best
             </h1>
-            <a href="<?php echo get_site_url() . '/categories'; ?>" alt="" class="btn btn-dark btn-lg font-weight-light hvr-underline-from-center btn-lg rounded-0 animated infinite slow pulse">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
+            <h1 class="font-weight-light text-uppercase">
+                Step <span class="text-warning">1</span>
+            </h1>
+            <h2 class="font-weight-light font-jost">
+                Choose a category
+            </h2>
+        </div>
+        <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
+            <h1 class="font-weight-light text-uppercase">
+                Step <span class="text-warning">2</span>
+            </h1>
+            <h2 class="font-weight-light font-jost">
+                Choose an affirmation
+            </h2>
+        </div>
+        <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
+            <h1 class="font-weight-light text-uppercase">
+                Step <span class="text-warning">3</span>
+            </h1>
+            <h2 class="font-weight-light font-jost">
+                Choose a music
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <a href="<?php echo get_site_url() . '/categories'; ?>" alt="" class="btn btn-dark btn-lg rounded-0 animated infinite slow pulse">
                 Get Started
             </a>
         </div>
@@ -231,18 +203,18 @@ $section_7 = get_field('section_7');
 <div class="container my-5">
     <div class="row align-items-center">
         <div class="col-12 col-md-6 col-lg-4 text-center mb-3 mb-md-0">
-        <?php echo wp_get_attachment_image(49, 'medium', false, 'class=img-fluid'); ?>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-8 text-center text-md-left">
-                    <blockquote class="blockquote">
-  <p class="mb-0">If we understand how to manage our beliefs, thoughts and feelings,
-our experiences, will change, our expressions will be more authentic.
-…we become our own MASTER</p>
-  <footer class="blockquote-footer"><b>Rene</b>, founder of "SilentChange Production" and "SilentAffirmations"</footer>
-</blockquote>
+            <?php echo wp_get_attachment_image(49, 'medium', false, 'class=img-fluid'); ?>
+        </div>
+        <div class="col-12 col-md-6 col-lg-8 text-center text-md-left">
+            <blockquote class="blockquote">
+                <p class="mb-0">If we understand how to manage our beliefs, thoughts and feelings,
+                    our experiences, will change, our expressions will be more authentic.
+                    …we become our own MASTER</p>
+                <footer class="blockquote-footer"><b>Rene</b>, founder of "SilentChange Production" and "SilentAffirmations"</footer>
+            </blockquote>
         </div>
 
-        
+
     </div>
 </div>
 

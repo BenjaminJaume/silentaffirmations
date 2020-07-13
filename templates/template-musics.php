@@ -165,12 +165,15 @@ get_header();
                     $product_name = $product->get_name();
                     $product_description = $product->get_short_description();
 
-                    $files_list = $product->get_files();
-                    // Extracting the file name of the first file
+                    // $files_list = $product->get_files();
+
                     $i = 0;
-                    foreach ($files_list as $key => $f) {
+                    foreach ($product->get_downloads() as $key_download_id => $download) {
+
+                        ## Using WC_Product_Download methods (since WooCommerce 3)
+
                         if (!($i == 1)) {
-                            $file_name = $f['name'];
+                            $file_name = $download->get_name(); // File label name
                             $i++;
                         }
                     }
@@ -198,7 +201,12 @@ get_header();
                             <?php echo do_shortcode('[add_to_cart id="' . $product_ID . '" quantity="1" class="border-0 m-0 p-0"]'); ?>
                         </div>
                         <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center order-lg-2 my-4 my-lg-0">
-                            <?php echo do_shortcode('[audio src="' . $preview['url'] . '"]'); ?>
+                            <?php
+                            if ($preview) {
+                                echo do_shortcode('[audio src="' . $preview['url'] . '"]');
+                            } else {
+                                echo 'No preview available';
+                            } ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -271,17 +279,17 @@ get_header();
 
 <?php endif; ?>
 <?php wp_reset_query();
-    } elseif(isset($_POST['custom_affirmation'])) {
+    } elseif (isset($_POST['custom_affirmation'])) {
         $custom_affirmation = $_POST['custom_affirmation'];
 
         $id_custom_category = 249;
         $id_custom_affirmation = 250;
-        
+
         $title_category = get_the_title($id_custom_category);
 
-        ?>
+?>
 
-        <div id="wrapper-musics">
+    <div id="wrapper-musics">
 
         <div class="container-fluid my-5">
             <div class="row sticky-top container-sticky-top bg-dark mx-sm-3 mx-md-4 mx-lg-5">
@@ -311,9 +319,9 @@ get_header();
                             Your custom affirmation
                         </h4>
                         <p class="font-jost font-weight-light font-big mb-0">
-                                &quot;
-                                <?php echo strip_tags($_POST['custom_affirmation']); ?>
-                                &quot;
+                            &quot;
+                            <?php echo strip_tags($_POST['custom_affirmation']); ?>
+                            &quot;
                         </p>
                     </div>
                 </div>
@@ -411,7 +419,8 @@ get_header();
                             </p>
                         </div>
                         <div class="col-12 col-lg-3 text-center order-lg-3 mt-3 mt-lg-0">
-                            <?php //echo do_shortcode('[add_to_cart id="' . $product_ID . '" quantity="1" class="border-0 m-0 p-0"]'); ?>
+                            <?php //echo do_shortcode('[add_to_cart id="' . $product_ID . '" quantity="1" class="border-0 m-0 p-0"]'); 
+                            ?>
                             <form method="POST" action="?add-to-cart=<?php echo $product_ID; ?>">
                                 <button type="submit" class="btn btn-dark rounded-0 hvr-icon-back">
                                     Add to cart
@@ -445,7 +454,7 @@ get_header();
                 <?php } ?>
         </div>
     <?php }
- } else { ?>
+        } else { ?>
     <div class="container-fluid my-5" id="wrapper-musics">
         <div class="row">
             <div class="col-12 text-center">
