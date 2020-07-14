@@ -92,7 +92,7 @@ $section_7 = get_field('section_7');
     <div class="row align-items-center">
         <div class="col-12 col-md-6 order-2 order-md-1 text-center">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/7mTsmp4bba4?loop=false" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/1EVDfqO0w-c?loop=false" allowfullscreen></iframe>
             </div>
         </div>
         <div class="col-12 col-md-6 text-center text-md-right order-1 order-md-2">
