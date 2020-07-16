@@ -155,14 +155,16 @@ $section_7 = get_field('section_7');
     </p>
 </div> -->
 
-<div class="container-fluid my-5">
-    <div class="row bg-dark py-5">
+<div class="container-fluid bg-dark my-5 py-5">
+    <div class="row">
         <div class="col-12 text-center font-manrope">
             <h1 class="font-manrope text-white text-uppercase font-weight-light m-0">
                 Find the <span class="text-warning">affirmation</span> that fits <span class="text-warning">you</span> best
             </h1>
         </div>
     </div>
+</div>
+<div class="container my-5">
     <div class="row justify-content-center my-5">
         <div class="col-12 col-md-4 text-center font-manrope my-2 my-md-0">
             <h1 class="font-weight-light text-uppercase">
@@ -203,7 +205,7 @@ $section_7 = get_field('section_7');
 <div class="container my-5">
     <div class="row align-items-center">
         <div class="col-12 col-md-6 col-lg-4 text-center mb-3 mb-md-0">
-            <?php echo wp_get_attachment_image(49, 'medium', false, 'class=img-fluid'); ?>
+            <?php echo wp_get_attachment_image(608, 'medium', false, 'class=img-fluid frame'); ?>
         </div>
         <div class="col-12 col-md-6 col-lg-8 text-center text-md-left">
             <blockquote class="blockquote">
@@ -218,7 +220,7 @@ $section_7 = get_field('section_7');
     </div>
 </div>
 
-<hr class="w-75 my-5" />
+<!-- <hr class="w-75 my-5" />
 
 <div class="container my-5">
     <div class="row mb-5">
@@ -291,6 +293,6 @@ $section_7 = get_field('section_7');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <?php get_footer(); ?>

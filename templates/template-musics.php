@@ -26,6 +26,38 @@ get_header();
 
 ?>
 
+<?php
+// Adding to the cart success message
+if (isset($_GET['add-to-cart'])) { ?>
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            $('#modal-success').modal('show');
+        });
+    </script>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-success">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="text-warning text-uppercase modal-title">Success 😀</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php $product_addedd = wc_get_product($_GET['add-to-cart']); ?>
+                    <p>Your affirmation with the song "<span class="text-warning"><?php echo $product_addedd->get_description(); ?>"</span> has been added to your cart!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning rounded-0" data-dismiss="modal">Keep shopping</button>
+                    <a href="cart" class="btn btn-outline-dark rounded-0">Go to your cart</a>
+                    <a href="checkout" class="btn btn-dark rounded-0">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
 <div id="wrapper-musics">
     <?php
     if (isset($_POST['id_category_chosen']) && isset($_POST['id_affirmation_chosen'])) {
@@ -37,7 +69,7 @@ get_header();
 
     ?>
         <div class="container-fluid my-5">
-            <div class="row sticky-top container-sticky-top bg-dark mx-sm-3 mx-md-4 mx-lg-5">
+            <div class="row bg-dark mx-sm-3 mx-md-4 mx-lg-5">
                 <div class="col-12 text-center py-3">
                     <p class="text-white text-uppercase">
                         Step <span class="text-warning">3</span> out of 3</span>
@@ -237,7 +269,7 @@ get_header();
                     </p>
                 </div>
             </div>
-            <form action="<?php echo get_site_url() . '/musics'; ?>" method="post" class="row justify-content-center text-center my-5">
+            <!-- <form action="<?php echo get_site_url() . '/musics'; ?>" method="post" class="row justify-content-center text-center my-5">
                 <div class="col-12 col-sm-10 col-md-6 col-lg-3">
                     <div class="form-group mb-5">
                         <label for="select_category" class="text-warning text-uppercase">Category</label>
@@ -273,7 +305,7 @@ get_header();
                         <i class="fa fa-search hvr-icon ml-2"></i>
                     </button>
                 </div>
-            </form>
+            </form> -->
         </div>
 </div>
 
@@ -292,7 +324,7 @@ get_header();
     <div id="wrapper-musics">
 
         <div class="container-fluid my-5">
-            <div class="row sticky-top container-sticky-top bg-dark mx-sm-3 mx-md-4 mx-lg-5">
+            <div class="row bg-dark mx-sm-3 mx-md-4 mx-lg-5">
                 <div class="col-12 text-center py-3">
                     <p class="text-white text-uppercase">
                         <span class="text-warning">Last</span> step</span>
@@ -434,7 +466,12 @@ get_header();
                             </form>
                         </div>
                         <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center order-lg-2 my-4 my-lg-0">
-                            <?php echo do_shortcode('[audio src="' . $preview['url'] . '"]'); ?>
+                            <?php
+                            if ($preview) {
+                                echo do_shortcode('[audio src="' . $preview['url'] . '"]');
+                            } else {
+                                echo 'No preview available';
+                            } ?>
                         </div>
                     </div>
                 <?php endforeach; ?>

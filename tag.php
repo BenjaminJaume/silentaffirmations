@@ -56,14 +56,14 @@ $query = new WP_Query($args);
                                 <input type="hidden" name="id_category_chosen" value="<?php echo $id_category_chosen; ?>" />
                             </form>
 
-                            <?php $reader = get_field('reader', $affirmation_ID);
-                            if ($reader['url']) { ?>
+                            <!-- <?php $reader = get_field('reader', $affirmation_ID);
+                                    if ($reader['url']) { ?>
                                 <div class="my-4">
                                     <hr class="w-50" />
                                     <p class="text-warning text-uppercase">Listen to the affirmation</p>
                                     <?php echo do_shortcode('[audio src="' . $reader['url'] . '"]'); ?>
                                 </div>
-                            <?php } ?>
+                            <?php } ?> -->
 
                             <form action="<?php echo get_site_url() . '/musics'; ?>" method="post">
                                 <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward hvr-underline-from-center mt-3">

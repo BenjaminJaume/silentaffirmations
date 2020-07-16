@@ -88,7 +88,7 @@ $q = get_posts($args);
 
 <hr class="w-75 my-5" />
 
-<div class="container my-5" data-aos="fade-up" data-aos-once="true">
+<div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
             <h2 class="font-manrope text-uppercase font-weight-light mb-5">
@@ -129,7 +129,7 @@ $q = get_posts($args);
 
 <hr class="w-75 my-5" />
 
-<div class="container my-5" data-aos="fade-up" data-aos-once="true">
+<div class="container my-5">
     <div class="row mb-3">
         <div class="col-12 text-center">
             <h2 class="font-manrope text-uppercase font-weight-light">

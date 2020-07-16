@@ -39,7 +39,7 @@ if (is_shop() ||  is_product_category()) {
 
 <body <?php body_class('main'); ?>>
 
-    <header class=" sticky-top" role="banner">
+    <header class="sticky-top" role="banner">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
             <div class="container-fluid">
                 <a class="navbar-brand mx-auto" href=<?php bloginfo('url'); ?>>
