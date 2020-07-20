@@ -96,7 +96,7 @@ $q = get_posts($args);
             </h2>
 
             <h2 class="text-muted font-weight-light m-0">
-                Select a keyword
+                Select keywords
             </h2>
         </div>
     </div>

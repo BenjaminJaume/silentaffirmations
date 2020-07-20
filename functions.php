@@ -148,11 +148,11 @@ function custom_categories_column($column, $post_id)
                 } else {
                     $id_image = $image;
                 }
+                echo wp_get_attachment_image($id_image, 'thumbnail', false, 'class=img-fluid');
             } else {
                 echo 'No pictures linked';
             }
 
-            echo wp_get_attachment_image($id_image, 'thumbnail', false, 'class=img-fluid');
             break;
 
         case 'description':
