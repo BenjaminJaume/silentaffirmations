@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <div class="container my-5">
-    <div class="row my-5">
+    <div class="row">
         <div class="col-12 text-center">
             <h1 class="display-4 font-manrope text-warning">
-                <?php the_title(); ?>
+                <?php get_the_title() != "Checkout" ? the_title() : ''; ?>
             </h1>
         </div>
     </div>

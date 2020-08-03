@@ -76,7 +76,7 @@ if (isset($_POST['id_category_chosen'])) {
                         <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
                             <p class="h2 font-jost font-weight-light">
                                 &quot;
-                                <?php echo strip_tags(get_the_content($affirmation_ID)); ?>
+                                <?php echo strip_tags($affirmation->post_content); ?>
                                 &quot;
                             </p>
 

@@ -318,7 +318,6 @@ if (isset($_GET['add-to-cart'])) { ?>
         $id_custom_affirmation = 250;
 
         $title_category = get_the_title($id_custom_category);
-
 ?>
 
     <div id="wrapper-musics">
@@ -390,7 +389,7 @@ if (isset($_GET['add-to-cart'])) { ?>
                 'posts_per_page' => -1,
                 'relation' => 'AND',
                 'orderby' => 'music',
-                'order' => 'ASC',
+                'order' => 'DESC',
                 'meta_query' => array(
                     array(
                         'key' => 'category',
